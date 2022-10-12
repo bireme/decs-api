@@ -6,15 +6,15 @@ from django.db import models
 from .models_thesaurus import Thesaurus
 
 from utils.models import Generic
-from log.models import AuditLog
+# from log.models import AuditLog
 
 from thesaurus.choices import *
 
 from multiselectfield import MultiSelectField
 
 
-
-class IdentifierQualif(Generic, AuditLog):
+# class IdentifierQualif(Generic, AuditLog):
+class IdentifierQualif(Generic):
 
     class Meta:
         verbose_name = _("Qualifier")
@@ -70,8 +70,8 @@ class IdentifierQualif(Generic, AuditLog):
 
 
 # Qualifier
-class DescriptionQualif(models.Model, AuditLog):
-# class DescriptionQualif(models.Model):
+# class DescriptionQualif(models.Model, AuditLog):
+class DescriptionQualif(models.Model):
 
     class Meta:
         verbose_name = _("Description of Qualifier")
@@ -102,8 +102,8 @@ class DescriptionQualif(models.Model, AuditLog):
 
 
 # Tree numbers for qualifiers
-class TreeNumbersListQualif(models.Model, AuditLog):
-# class TreeNumbersListQualif(models.Model):
+# class TreeNumbersListQualif(models.Model, AuditLog):
+class TreeNumbersListQualif(models.Model):
 
     class Meta:
         verbose_name = _("Tree number for qualifier")
@@ -121,7 +121,6 @@ class TreeNumbersListQualif(models.Model, AuditLog):
 
     def __str__(self):
         return '%s' % (self.id)
-
 
 
 # Administrative information from old system
@@ -173,7 +172,6 @@ class legacyInformationQualif(models.Model):
         return '%s' % (self.id)
 
 
-
 # Identifier ConceptList
 # class IdentifierConceptListQualif(models.Model, AuditLog):
 class IdentifierConceptListQualif(models.Model):
@@ -206,7 +204,6 @@ class IdentifierConceptListQualif(models.Model):
         return '%s' % (self.id)
 
 
-
 # ConceptList
 # class ConceptListQualif(models.Model, AuditLog):
 class ConceptListQualif(models.Model):
@@ -227,7 +224,6 @@ class ConceptListQualif(models.Model):
 
     def __str__(self):
         return '%s' % (self.id)
-
 
 
 # TermListQualif

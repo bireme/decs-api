@@ -7,7 +7,7 @@ from .models_thesaurus import Thesaurus
 from .models_qualifiers import *
 
 from utils.models import Generic
-from log.models import AuditLog
+# from log.models import AuditLog
 
 from thesaurus.choices import *
 
@@ -15,7 +15,8 @@ from multiselectfield import MultiSelectField
 
 
 
-class IdentifierDesc(Generic, AuditLog):
+# class IdentifierDesc(Generic, AuditLog):
+class IdentifierDesc(Generic):
 
     class Meta:
         verbose_name = _("Descriptor")
@@ -59,8 +60,8 @@ class IdentifierDesc(Generic, AuditLog):
 
 
 # Description
-class DescriptionDesc(models.Model, AuditLog):
-# class DescriptionDesc(models.Model):
+# class DescriptionDesc(models.Model, AuditLog):
+class DescriptionDesc(models.Model):
 
     class Meta:
         verbose_name = _("Description")
@@ -96,8 +97,8 @@ class DescriptionDesc(models.Model, AuditLog):
 
 
 # Tree numbers for descriptors
-class TreeNumbersListDesc(models.Model, AuditLog):
-# class TreeNumbersListDesc(models.Model):
+# class TreeNumbersListDesc(models.Model, AuditLog):
+class TreeNumbersListDesc(models.Model):
 
     class Meta:
         verbose_name = _("Tree number for descriptor")
@@ -119,7 +120,8 @@ class TreeNumbersListDesc(models.Model, AuditLog):
 
 
 # PharmacologicalActionList
-class PharmacologicalActionList(models.Model, AuditLog):
+# class PharmacologicalActionList(models.Model, AuditLog):
+class PharmacologicalActionList(models.Model):
 
     class Meta:
         verbose_name = _("Pharmacological Action List")
@@ -142,11 +144,9 @@ class PharmacologicalActionList(models.Model, AuditLog):
         return '%s' % (self.id)
 
 
-
-
 # SeeRelatedList for descriptors
-class SeeRelatedListDesc(models.Model, AuditLog):
-# class SeeRelatedListDesc(models.Model):
+# class SeeRelatedListDesc(models.Model, AuditLog):
+class SeeRelatedListDesc(models.Model):
 
     class Meta:
         verbose_name = _("See Related List")
@@ -167,11 +167,9 @@ class SeeRelatedListDesc(models.Model, AuditLog):
         return '%s' % (self.id)
 
 
-
-
 # Previous Indexing List
-class PreviousIndexingListDesc(models.Model, AuditLog):
-# class PreviousIndexingListDesc(models.Model):
+# class PreviousIndexingListDesc(models.Model, AuditLog):
+class PreviousIndexingListDesc(models.Model):
 
     class Meta:
         verbose_name = _("Previous Indexing")
@@ -189,7 +187,6 @@ class PreviousIndexingListDesc(models.Model, AuditLog):
 
     def __str__(self):
         return '%s' % (self.id)
-
 
 
 # Administrative information from old system
@@ -241,8 +238,8 @@ class legacyInformationDesc(models.Model):
         return '%s' % (self.id)
 
 
-
-class EntryCombinationListDesc(models.Model, AuditLog):
+# class EntryCombinationListDesc(models.Model, AuditLog):
+class EntryCombinationListDesc(models.Model):
 
     class Meta:
         verbose_name = _("Entry combination List")
@@ -264,7 +261,6 @@ class EntryCombinationListDesc(models.Model, AuditLog):
 
     def __str__(self):
         return '%s' % (self.id)
-
 
 
 # Identifier ConceptList
@@ -300,8 +296,6 @@ class IdentifierConceptListDesc(models.Model):
         return '%s' % (self.id)
 
 
-
-
 # ConceptList
 # class ConceptListDesc(models.Model, AuditLog):
 class ConceptListDesc(models.Model):
@@ -323,8 +317,6 @@ class ConceptListDesc(models.Model):
 
     def __str__(self):
         return '%s' % (self.id)
-
-
 
 
 # TermList
