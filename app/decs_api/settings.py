@@ -22,16 +22,15 @@ PROJECT_ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ubnmgj=-c)v6++9*wx!i-pcwz7%aa4kmb6qvc6l)ep%rqmx93j'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DEBUG", 0))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(",")
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -86,12 +85,12 @@ WSGI_APPLICATION = 'decs_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'decs_portal_2021',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': os.environ.get("DATABASE_ENGINE", 'django.db.backends.mysql'),
+        'NAME':  os.environ.get("DATABASE_NAME", 'decs_portal'),
+        'USER': os.environ.get("DATABASE_USER"),
+        'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
+        'HOST':  os.environ.get("DATABASE_HOST", 'localhost'),
+        'PORT':  os.environ.get("DATABASE_PORT", '3306'),
     }
 }
 """
@@ -152,8 +151,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ELASTICSEARCH_DSL={
     'default': {
-        'hosts': 'localhost:9200',
-        'timeout': 60,  # Custom timeout
+        'hosts': os.environ.get("ELASTICSEARCH_HOST", 'localhost:9200'),
+        'timeout': int(os.environ.get("ELASTICSEARCH_TIMEOUT", 60)),  # Custom timeout
     },
 }
 # Set to False to globally disable auto-syncing
