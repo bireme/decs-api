@@ -14,7 +14,7 @@ tag:
 dev_build:
 	@docker-compose -f $(COMPOSE_FILE_DEV) build
 
-dev_up:
+dev_start:
 	@docker-compose -f $(COMPOSE_FILE_DEV) up -d
 
 dev_run:
