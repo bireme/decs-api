@@ -22,6 +22,7 @@ class IdentifierDesc(Generic):
         verbose_name = _("Descriptor")
         verbose_name_plural = _("Descriptors")
         ordering = ('decs_code',)
+        managed=False
 
     thesaurus = models.ForeignKey(Thesaurus, null=True, blank=False, default=None, on_delete=models.PROTECT)
 
@@ -67,6 +68,7 @@ class DescriptionDesc(models.Model):
         verbose_name = _("Description")
         verbose_name_plural = _("Descriptions")
         unique_together = ('identifier','language_code')
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="descriptiondesc", null=True, on_delete=models.PROTECT)
 
@@ -105,6 +107,7 @@ class TreeNumbersListDesc(models.Model):
         verbose_name_plural = _("Tree numbers for descriptors")
         ordering = ('tree_number',)
         unique_together = ('identifier','tree_number')
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="dtreenumbers", null=True, on_delete=models.PROTECT)
 
@@ -126,6 +129,7 @@ class PharmacologicalActionList(models.Model):
     class Meta:
         verbose_name = _("Pharmacological Action List")
         verbose_name_plural = _("Pharmacologicals Action List")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="pharmacodesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -151,6 +155,7 @@ class SeeRelatedListDesc(models.Model):
     class Meta:
         verbose_name = _("See Related List")
         verbose_name_plural = _("See Related List")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="relateddesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -174,6 +179,7 @@ class PreviousIndexingListDesc(models.Model):
     class Meta:
         verbose_name = _("Previous Indexing")
         verbose_name_plural = _("Previous Indexing")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="previousdesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -195,6 +201,7 @@ class legacyInformationDesc(models.Model):
     class Meta:
         verbose_name = _("Legacy information")
         verbose_name_plural = _("Legacy information")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="legacyinformationdesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -244,6 +251,7 @@ class EntryCombinationListDesc(models.Model):
     class Meta:
         verbose_name = _("Entry combination List")
         verbose_name_plural = _("Entry combinations List")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, related_name="entrycombinationlistdesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -270,6 +278,7 @@ class IdentifierConceptListDesc(models.Model):
     class Meta:
         verbose_name = _("Concept record")
         verbose_name_plural = _("Concept records")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierDesc, blank=True, null=True, on_delete=models.PROTECT)
     # identifier = models.ForeignKey(IdentifierDesc, related_name="identifierconceptdesc", blank=True, null=True)
@@ -303,6 +312,7 @@ class ConceptListDesc(models.Model):
     class Meta:
         verbose_name = _("Concept")
         verbose_name_plural = _("Concepts")
+        managed=False
 
     identifier_concept = models.ForeignKey(IdentifierConceptListDesc, related_name="conceptdesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -327,6 +337,7 @@ class TermListDesc(models.Model):
         verbose_name = _("Term")
         verbose_name_plural = _("Terms")
         # ordering = ('language_code','term_string','concept_preferred_term')
+        managed=False
 
     identifier_concept = models.ForeignKey(IdentifierConceptListDesc, related_name="termdesc", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -382,6 +393,7 @@ class TheraurusOccurrenceListDesc(models.Model):
     class Meta:
         verbose_name = _("Thesaurus occurrence")
         verbose_name_plural = _("Thesaurus occurrence")
+        managed=False
 
     identifier_term = models.ForeignKey(TermListDesc, related_name="tocurrencedesc", blank=True, null=True, on_delete=models.PROTECT)
 

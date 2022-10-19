@@ -20,6 +20,7 @@ class IdentifierQualif(Generic):
         verbose_name = _("Qualifier")
         verbose_name_plural = _("Qualifiers")
         unique_together = ('thesaurus','abbreviation')
+        managed=False
 
     thesaurus = models.ForeignKey(Thesaurus, null=True, blank=False, default=None, on_delete=models.PROTECT)
 
@@ -77,6 +78,7 @@ class DescriptionQualif(models.Model):
         verbose_name = _("Description of Qualifier")
         verbose_name_plural = _("Descriptions of Qualifier")
         unique_together = ('identifier','language_code')
+        managed=False
 
     identifier = models.ForeignKey(IdentifierQualif, related_name="descriptionqualif", null=True, on_delete=models.PROTECT)
 
@@ -110,6 +112,7 @@ class TreeNumbersListQualif(models.Model):
         verbose_name_plural = _("Tree numbers for qualifiers")
         ordering = ('tree_number',)
         unique_together = ('identifier','tree_number')
+        managed=False
 
     identifier = models.ForeignKey(IdentifierQualif, related_name="qtreenumbers", null=True, on_delete=models.PROTECT)
 
@@ -129,6 +132,7 @@ class legacyInformationQualif(models.Model):
     class Meta:
         verbose_name = _("Legacy information")
         verbose_name_plural = _("Legacy information")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierQualif, related_name="legacyinformationqualif", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -179,6 +183,7 @@ class IdentifierConceptListQualif(models.Model):
     class Meta:
         verbose_name = _("Concept record")
         verbose_name_plural = _("Concept records")
+        managed=False
 
     identifier = models.ForeignKey(IdentifierQualif, blank=True, null=True, on_delete=models.PROTECT)
 
@@ -211,6 +216,7 @@ class ConceptListQualif(models.Model):
     class Meta:
         verbose_name = _("Concept")
         verbose_name_plural = _("Concepts")
+        managed=False
 
     identifier_concept = models.ForeignKey(IdentifierConceptListQualif, related_name="conceptqualif", blank=True, null=True, on_delete=models.PROTECT)
 
@@ -236,6 +242,7 @@ class TermListQualif(models.Model):
         ordering = ('language_code','term_string','concept_preferred_term')
         # unique_together = ('term_string','language_code','status','date_altered')
         # unique_together = ('term_string','language_code','status')
+        managed=False
 
     identifier_concept = models.ForeignKey(IdentifierConceptListQualif, related_name="termqualif", blank=True, null=True, on_delete=models.PROTECT)
 
