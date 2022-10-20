@@ -11,6 +11,7 @@ class Thesaurus(models.Model):
     class Meta:
             verbose_name = _("Thesaurus")
             verbose_name_plural = _("Thesaurus")
+            managed=False
 
     thesaurus_name = models.CharField(_("Thesaurus name"), max_length=250, blank=False)
 
@@ -30,6 +31,7 @@ class code_controller(models.Model):
     class Meta:
         verbose_name = _("Sequencial control")
         verbose_name_plural = _("Sequencial controls")
+        managed=False
 
     sequential_number = models.CharField(_("Sequential number"), max_length=250, blank=False)
 
@@ -44,6 +46,7 @@ class code_controller_term(models.Model):
     class Meta:
         verbose_name = _("Sequencial control")
         verbose_name_plural = _("Sequencial controls")
+        managed=False
 
     sequential_number = models.CharField(_("Sequential number"), max_length=250, blank=False)
 
