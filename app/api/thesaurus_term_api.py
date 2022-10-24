@@ -5,10 +5,6 @@ from tastypie.resources import Resource
 from tastypie.paginator import Paginator
 from tastypie.utils.mime import determine_format
 from tastypie import fields
-#from tastypie.authentication import ApiKeyAuthentication
-#from thesaurus.authentication import CustomApiKeyAuthentication
-#To save in DB access to this api
-#from tastypie.throttle import CacheDBThrottle
 
 # Modelos de thesaurus utilizados en las diferentes opciiones del ws decs
 from thesaurus.models import TermListDesc, TreeNumbersListDesc, TermListQualif, TreeNumbersListQualif
@@ -61,9 +57,6 @@ class TermResource(Resource):
 		serializer = WsDecsSerializer(formats=['xml', 'json'])
 		# elimina datos de paginacion
 		paginator_class = NoPaginator
-		#authentication = ApiKeyAuthentication()
-		#authentication = CustomApiKeyAuthentication()
-		#throttle = CacheDBThrottle()
 
 	def determine_format(self, request):
 		"""
@@ -88,7 +81,7 @@ class TermResource(Resource):
 
 	def get_search(self, request, **kwargs):
 		self.method_check(request, allowed=['get'])
-		self.is_authenticated(request)
+		#self.is_authenticated(request)
 		#self.throttle_check(request)
 		#self.log_throttled_access(request)
 
