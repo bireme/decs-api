@@ -10,9 +10,6 @@ from utils.models import Generic
 
 from thesaurus.choices import *
 
-from multiselectfield import MultiSelectField
-
-
 # class IdentifierQualif(Generic, AuditLog):
 class IdentifierQualif(Generic):
 
