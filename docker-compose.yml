@@ -1,0 +1,77 @@
+version: '3.4'
+
+services:
+  decs_api_app:
+    container_name: decs-api-app
+    restart: unless-stopped
+    build:
+      context: .
+      target: prod
+    image: ${IMAGE_TAG}
+    expose:
+      - 8000
+    volumes:
+      - ${LOG_PATH}:/logs
+      - static_files:/app/static_files
+      - gunisock:/tmp
+    depends_on:
+      - decs_api_elasticsearch
+    env_file:
+      - ./conf/app-env
+    command: gunicorn --bind unix:/tmp/gunicorn.sock decs_api.wsgi ${GUNICORN_PARAMS}
+    networks:
+      - nginx-proxy
+    deploy:
+      resources:
+        limits:
+          memory: ${MEMORY_APP_LIMIT}
+        reservations:
+          memory: ${MEMORY_APP_RESERVATION}
+
+  decs_api_webserver:
+    container_name: decs-api-webserver
+    restart: unless-stopped
+    image: nginx:1.20-alpine
+    expose:
+      - 80
+    volumes:
+      - ./conf/nginx:/etc/nginx/conf.d
+      - static_files:/app/static_files
+      - gunisock:/tmp
+    depends_on:
+      - decs_api_app
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_HOST=${VIRTUAL_HOST}
+    networks:
+      - nginx-proxy
+    deploy:
+      resources:
+        limits:
+          memory: ${MEMORY_WEBSERVER_LIMIT}
+        reservations:
+          memory: ${MEMORY_WEBSERVER_RESERVATION}
+
+  decs_api_elasticsearch:
+    container_name: decs-api-elasticsearch
+    image: elasticsearch:8.4.3
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    networks:
+      - nginx-proxy
+
+
+networks:
+  nginx-proxy:
+    external: true
+
+volumes:
+  static_files:
+  gunisock:
+  esdata:

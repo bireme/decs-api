@@ -11,10 +11,6 @@ from utils.models import Generic
 
 from thesaurus.choices import *
 
-from multiselectfield import MultiSelectField
-
-
-
 # class IdentifierDesc(Generic, AuditLog):
 class IdentifierDesc(Generic):
 
