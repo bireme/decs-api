@@ -353,6 +353,21 @@ class Command(BaseCommand):
 					"attr": {"tree_id": "Y"}
 				}
 			},
+			{
+				'treeNumber': 'MT',
+				'type': 'Descriptor',
+				'thesaurus': [1],
+				'decs_code': "",
+				'self_term': {
+					'label': [
+						{"@value": "TRADITIONAL, COMPLEMENTARY AND INTEGRATIVE MEDICINE", "@language": "en", "status": 1},
+						{"@value": "MEDICINAS TRADICIONALES, COMPLEMENTARIAS E INTEGRATIVAS", "@language": "es", "status": 1},
+						{"@value": "MEDICINAS TRADICIONAIS, COMPLEMENTARES E INTEGRATIVAS", "@language": "pt-br", "status": 1},
+						{"@value": "MÉDECINE TRADITIONNELLE, COMPLÉMENTAIRE ET INTÉGRATIVE", "@language": "fr", "status": 1}
+					],
+					"attr": {"tree_id": "MT"}
+				}
+			},
 		]
 
 		for category in first_level:

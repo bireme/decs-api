@@ -91,9 +91,12 @@ class Command(BaseCommand):
 			for tree_id_ancestor in ancestors_tree_id:
 				if len(tree_id_ancestor) < 3:
 					# llenar ancestor_label con category en todos los lang
-					#self.stdout.write('tree_id_ancestor "%s", thesaurus "%s"' % (tree_id_ancestor, ths))
-					category = FirstLevel.objects.get(treeNumber=tree_id_ancestor, thesaurus=ths)
-					ancestor_term_list.append(category.self_term)
+					try:
+						category = FirstLevel.objects.get(treeNumber=tree_id_ancestor, thesaurus=ths)
+						ancestor_term_list.append(category.self_term)
+					except FirstLevel.DoesNotExist:
+						#self.stdout.write('tree_id_ancestor "%s", thesaurus "%s"' % (tree_id_ancestor, ths))
+						raise CommandError('DoesNotExist tree_id_ancestor "%s", thesaurus "%s"' % (tree_id_ancestor, ths))
 				else:
 					for ancestor_ids in ancestors_list:
 						if ancestor_ids['tree_number'] == tree_id_ancestor:
@@ -102,8 +105,12 @@ class Command(BaseCommand):
 							if parts[0] != part1:
 								part1 = parts[0]
 								category_id = get_category_id(part1)
-								category = FirstLevel.objects.get(treeNumber=category_id, thesaurus=ths)
-								ancestor_term_list.append(category.self_term)
+								try:
+									category = FirstLevel.objects.get(treeNumber=category_id, thesaurus=ths)
+									ancestor_term_list.append(category.self_term)
+								except FirstLevel.DoesNotExist:
+									#self.stdout.write('category_id "%s", thesaurus "%s"' % (category_id, ths))
+									raise CommandError('DoesNotExist category_id "%s", thesaurus "%s"' % (category_id, ths))
 
 							ancestor_terms = TermList.objects.filter(
 								identifier_concept__identifier=ancestor_ids['identifier_id'],
