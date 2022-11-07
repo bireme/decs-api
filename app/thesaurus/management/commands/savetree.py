@@ -57,6 +57,11 @@ class Command(BaseCommand):
 
 		for tree_number in tree_numbers:
 			tree_id = tree_number.tree_number
+
+			#avoid empty tree_id
+			if not tree_id:
+				continue
+
 			identifier_obj = IdentifierTable.objects.get(pk=tree_number.identifier_id)
 			ths = identifier_obj.thesaurus_id
 
@@ -95,7 +100,6 @@ class Command(BaseCommand):
 						category = FirstLevel.objects.get(treeNumber=tree_id_ancestor, thesaurus=ths)
 						ancestor_term_list.append(category.self_term)
 					except FirstLevel.DoesNotExist:
-						#self.stdout.write('tree_id_ancestor "%s", thesaurus "%s"' % (tree_id_ancestor, ths))
 						raise CommandError('DoesNotExist tree_id_ancestor "%s", thesaurus "%s"' % (tree_id_ancestor, ths))
 				else:
 					for ancestor_ids in ancestors_list:
@@ -105,11 +109,11 @@ class Command(BaseCommand):
 							if parts[0] != part1:
 								part1 = parts[0]
 								category_id = get_category_id(part1)
+								#self.stdout.write('category_id "%s", thesaurus "%s"' % (category_id, ths))
 								try:
 									category = FirstLevel.objects.get(treeNumber=category_id, thesaurus=ths)
 									ancestor_term_list.append(category.self_term)
 								except FirstLevel.DoesNotExist:
-									#self.stdout.write('category_id "%s", thesaurus "%s"' % (category_id, ths))
 									raise CommandError('DoesNotExist category_id "%s", thesaurus "%s"' % (category_id, ths))
 
 							ancestor_terms = TermList.objects.filter(
