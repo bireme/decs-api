@@ -124,9 +124,6 @@ class TermResource(Resource):
 				response = execute_simple_search(search_treeid)
 
 		self.log_throttled_access(request)
-		# para probar search desde la url
-		# return self.create_response(request, object_list)
-
 		return response
 
 	def dehydrate(self, bundle):
