@@ -57,6 +57,15 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 		return dict(index=['descriptor_term', 'qualifier_term', 'previous_term'],
 		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], filter=filter_gral)
 		            )
+	elif op_prefix == 'quick':
+		"""
+		busqueda rapida: terminos preferidos y sinonimos, en 'descriptor_term', 'qualifier_term'; 
+		parabra a palabra, sin filtro de idioma 
+		"""
+		return dict(index=['descriptor_term', 'qualifier_term'],
+		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], 
+					filter=[Q('term', status=status), Q('term', term_thesaurus=ths)])
+		            )
 	elif op_prefix == 'tree_id':
 		return dict(index=['descriptor_treenumber', 'qualifier_treenumber'],
 	            query=Q('bool', filter=[Q('term', tree_number=text), Q('match', identifier__thesaurus_id=ths)])
@@ -155,6 +164,42 @@ def execute_simple_search(simple_search):
 		if item not in result:
 			result.append(item)
 
+	return result
+
+def execute_quick_search(simple_search):
+	"""
+	Ejecuta una busqueda en ElasticSearch y devuelve los terminos preferidos y sinonimos encontrados en diferentes indices.
+	Se utiliza en opcion 'quick'. 
+
+	:param simple_search: diccionario con llaves 'index', 'query'; Indices donde buscar, ctdad de terminos a devolver
+					 y consulta a ejecutar expresada con Q(). Resultado de la funcion get_search_q
+	:return: listado de terminos preferidos y sinonimos que satisfacen la busqueda, como diccionario con llaves {'identifier', 'term_type', 'term_string'},
+					'identifier': id del descriptor o calificador, 'term_type': tipo de termino, descriptor o calificador,
+					'term_string': texto del termino
+	"""
+	result = []
+
+	s = Search(index=simple_search['index']).query(simple_search['query'])
+	s.execute()
+	#raise Http404(s.count())
+
+	item = {}
+	for hit in s.scan():
+		if hit.meta.index == 'descriptor_term':
+			item = {'identifier': hit.identifier_concept.identifier.pk,
+			        'term_type': 'descriptor',
+			        'term_string': hit.term_string,
+			        }
+		elif hit.meta.index == 'qualifier_term':
+			item = {'identifier': hit.identifier_concept.identifier.pk,
+			        'term_type': 'qualifier',
+			        'term_string': hit.term_string,
+			        }
+
+		#No devolver los repetidos
+		if item not in result:
+			result.append(item)
+		
 	return result
 
 def complex_search(list_in, status, lang_code, ths, last_op=None):
