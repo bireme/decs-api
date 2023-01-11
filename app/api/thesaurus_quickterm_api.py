@@ -23,8 +23,7 @@ class NoPaginator(Paginator):
 
 	def __init__(self, request_data, objects, resource_uri=None, limit=None, offset=0, max_limit=1000,
 	             collection_name='objects'):
-		# limit = 1000, Show all results
-		super(NoPaginator, self).__init__(request_data, objects, resource_uri, 20, offset, max_limit, collection_name)
+		super(NoPaginator, self).__init__(request_data, objects, resource_uri, limit, offset, max_limit, collection_name)
 
 	def page(self):
 		output = super(NoPaginator, self).page()
@@ -79,6 +78,8 @@ class QuickTermResource(Resource):
 
 	def get_search(self, request, **kwargs):
 		self.method_check(request, allowed=['get'])
+
+		self._meta.limit = request.GET.get('count', '20')
 
 		# default thesaurus 1 (decs)
 		ths = request.GET.get('ths', '1')
