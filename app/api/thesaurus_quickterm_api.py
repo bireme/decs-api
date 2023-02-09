@@ -14,6 +14,8 @@ from api.esearch_functions import *
 # Serializador para que formato xml sea igual al del servicio de buaqueda rapida actual
 from api.ws_decs_serializer import QuickDecsSerializer, WsDecsSerializer
 
+from api.thesaurus_term_api import get_valid_lang
+
 # limitar traceback en las respuestas con error
 # import sys
 # sys.tracebacklimit=0
@@ -87,10 +89,19 @@ class QuickTermResource(Resource):
 		# default status 1 (decs)
 		status = request.GET.get('status', '1')
 
+		# default language -> no language
+		lang = request.GET.get('lang', '')
+		if not lang:
+			lang_code = None
+		else:
+			valid_lang = get_valid_lang(lang)
+			lang = valid_lang[0]
+			lang_code = valid_lang[1]
+
 		response = []
 		if 'query' in request.GET:
 			query = request.GET.get('query', '')
-			quick_search = get_search_q('quick', query, None, status, None, ths)
+			quick_search = get_search_q('quick', query, None, status, lang_code, ths)
 			response = execute_quick_search(quick_search)
 
 		self.log_throttled_access(request)

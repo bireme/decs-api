@@ -32,8 +32,8 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 	search_q = {}
 
 	# filtros
+	# cdo se genera un solo query filter_gral (status, language_code, term_thesaurus) no se aplica en cada parte, sino al query unico
 	if lang_code == None and ths == None:
-		#cdo se genera un solo query filter_gral (status, language_code, term_thesaurus) no se aplica en cada parte, sino al query unico
 		filter_gral = []
 	else:
 		filter_gral = [Q('term', status=status), Q('term', language_code=lang_code), Q('term', term_thesaurus=ths)]
@@ -62,9 +62,14 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 		busqueda rapida: terminos preferidos y sinonimos, en 'descriptor_term', 'qualifier_term'; 
 		parabra a palabra, sin filtro de idioma 
 		"""
+		if lang_code == None:
+			filter_quick = [Q('term', status=status), Q('term', term_thesaurus=ths)]
+		else:
+			filter_quick = filter_gral
+
 		return dict(index=['descriptor_term', 'qualifier_term'],
 		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], 
-					filter=[Q('term', status=status), Q('term', term_thesaurus=ths)])
+					filter=filter_quick)
 		            )
 	elif op_prefix == 'tree_id':
 		return dict(index=['descriptor_treenumber', 'qualifier_treenumber'],
