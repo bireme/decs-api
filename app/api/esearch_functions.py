@@ -35,6 +35,8 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 	# cdo se genera un solo query filter_gral (status, language_code, term_thesaurus) no se aplica en cada parte, sino al query unico
 	if lang_code == None and ths == None:
 		filter_gral = []
+	elif lang_code == None:
+		filter_gral = [Q('term', status=status), Q('term', term_thesaurus=ths)]
 	else:
 		filter_gral = [Q('term', status=status), Q('term', language_code=lang_code), Q('term', term_thesaurus=ths)]
 
@@ -60,16 +62,16 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 	elif op_prefix == 'quick':
 		"""
 		busqueda rapida: terminos preferidos y sinonimos, en 'descriptor_term', 'qualifier_term'; 
-		parabra a palabra, sin filtro de idioma 
+		parabra a palabra, filtro de idioma opcional 
 		"""
+		# must_not es-es si lang_code == None
 		if lang_code == None:
-			filter_quick = [Q('term', status=status), Q('term', term_thesaurus=ths)]
+			query_q = Q('bool', must=[Q('match', term_string={"query": text, "operator": "AND"})],
+			            must_not=[Q('match', language_code="es-es")], filter=filter_gral)
 		else:
-			filter_quick = filter_gral
-
+			query_q = Q('bool', must=[Q('match', term_string={"query": text, "operator": "AND"})], filter=filter_gral)
 		return dict(index=['descriptor_term', 'qualifier_term'],
-		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], 
-					filter=filter_quick)
+		            query=query_q
 		            )
 	elif op_prefix == 'tree_id':
 		return dict(index=['descriptor_treenumber', 'qualifier_treenumber'],
@@ -110,8 +112,12 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 		# 104 - campo entero, términos históricos
 		# 404 - palabra a palabra, términos históricos
 		# 107 - campo entero, término autorizado, términos sinónimos y términos históricos
-		# 407 - palabra a palabra, término autorizado, términos sinónimos y términos históricos
-		search_q[op_prefix]['query'] = Q('bool', must=must, filter=filter_gral)
+		# 407 - palabra a palabra, término autorizado, términos sinónimos y términos
+
+		if lang_code == None: # must_not es-es si lang_code == None, caso quick search exact terms
+			search_q[op_prefix]['query'] = Q('bool', must=must, must_not=[Q('match', language_code="es-es")], filter=filter_gral)
+		else:
+			search_q[op_prefix]['query'] = Q('bool', must=must, filter=filter_gral)
 	else:
 		# 105 - campo entero, término autorizado y términos históricos
 		search_q['105'] = ['101', '104']
@@ -139,7 +145,7 @@ def execute_simple_search(simple_search):
 					'identifier': id del descriptor o calificador, 'term_type': tipo de termino: descriptor o calificador,
 	"""
 	result = []
-
+	#raise Http404(simple_search)
 	s = Search(index=simple_search['index']).query(simple_search['query'])
 	s.execute()
 	#raise Http404(s.count())
@@ -165,13 +171,13 @@ def execute_simple_search(simple_search):
 			item = {'identifier': hit.identifier.pk,
 			        'term_type': 'qualifier',
 			        }
-
 		if item not in result:
 			result.append(item)
 
+	# raise Http404(result)
 	return result
 
-def execute_quick_search(simple_search):
+def execute_quick_search(simple_search, sort=None):
 	"""
 	Ejecuta una busqueda en ElasticSearch y devuelve los terminos preferidos y sinonimos encontrados en diferentes indices.
 	Se utiliza en opcion 'quick'. 
@@ -182,30 +188,34 @@ def execute_quick_search(simple_search):
 					'identifier': id del descriptor o calificador, 'term_type': tipo de termino, descriptor o calificador,
 					'term_string': texto del termino
 	"""
-	result = []
+	if sort == None:
+		s = Search(index=simple_search['index']).query(simple_search['query']).extra(size=2)
+	else: #raw es tipo keyword
+		s = Search(index=simple_search['index']).query(simple_search['query']).sort({'term_string.raw':'asc'})
+		total = s.count()
+		s = s[0:total]  # obtener todos para que salga bien 'total' de resultados
+		#raise Http404(total)
 
-	s = Search(index=simple_search['index']).query(simple_search['query'])
-	s.execute()
-	#raise Http404(s.count())
+	response = s.execute()
 
-	item = {}
-	for hit in s.scan():
+	items = []
+	for hit in response:
 		if hit.meta.index == 'descriptor_term':
 			item = {'identifier': hit.identifier_concept.identifier.pk,
 			        'term_type': 'descriptor',
 			        'term_string': hit.term_string,
 			        }
-		elif hit.meta.index == 'qualifier_term':
+		else:
 			item = {'identifier': hit.identifier_concept.identifier.pk,
 			        'term_type': 'qualifier',
 			        'term_string': hit.term_string,
 			        }
 
 		#No devolver los repetidos
-		if item not in result:
-			result.append(item)
-		
-	return result
+		if item not in items:
+			items.append(item)
+
+	return items
 
 def complex_search(list_in, status, lang_code, ths, last_op=None):
 	"""

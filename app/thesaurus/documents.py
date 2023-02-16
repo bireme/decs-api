@@ -22,7 +22,8 @@ keyword_asciifolding = analyzer(
 class DescriptorTermDocument(Document):
 	term_string = fields_dsl.TextField(
 		analyzer=standard_asciifolding,
-		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding)}
+		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding),
+		        'raw': fields_dsl.KeywordField()}
 	)
 
 	# Filter by exact field value: "pt-br", "es-es"
@@ -65,7 +66,8 @@ class DescriptorTermDocument(Document):
 class QualifierTermDocument(Document):
 	term_string = fields_dsl.TextField(
 		analyzer=standard_asciifolding,
-		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding)}
+		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding),
+		        'raw': fields_dsl.KeywordField()}
 	)
 
 	# Filter by exact field value: "pt-br", "es-es"

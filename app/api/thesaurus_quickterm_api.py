@@ -81,7 +81,8 @@ class QuickTermResource(Resource):
 	def get_search(self, request, **kwargs):
 		self.method_check(request, allowed=['get'])
 
-		self._meta.limit = request.GET.get('count', '20')
+		#self._meta.limit = request.GET.get('count', '100')
+		count = request.GET.get('count', '100')
 
 		# default thesaurus 1 (decs)
 		ths = request.GET.get('ths', '1')
@@ -98,16 +99,29 @@ class QuickTermResource(Resource):
 			lang = valid_lang[0]
 			lang_code = valid_lang[1]
 
-		response = []
+		items = []
 		if 'query' in request.GET:
 			query = request.GET.get('query', '')
+			#Get TOP two results (exact term and qualifier)
+			exact_search = get_search_q('103', query, None, status, lang_code, ths)
+			items = execute_quick_search(exact_search)
+
 			quick_search = get_search_q('quick', query, None, status, lang_code, ths)
-			response = execute_quick_search(quick_search)
+			terms_alph = execute_quick_search(quick_search, 'Y' )
+
+			for term in terms_alph:
+				if term not in items:
+					items.append(term)
+
+			if int(count) < len(items):
+				self._meta.limit = count
+			else:
+				self._meta.limit = len(items)
 
 		self.log_throttled_access(request)
 		# para probar search desde la url
 		#return self.create_response(request, response)
-		return response
+		return items
 
 	def dehydrate(self, bundle):
 
