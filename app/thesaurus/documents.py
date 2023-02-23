@@ -1,6 +1,6 @@
 from django_elasticsearch_dsl import Document, fields as fields_dsl
 from django_elasticsearch_dsl.registries import registry
-from elasticsearch_dsl import analyzer
+from elasticsearch_dsl import analyzer, normalizer
 
 from thesaurus.models import TermListDesc, TermListQualif, PreviousIndexingListDesc, TreeNumbersListDesc, TreeNumbersListQualif
 
@@ -17,12 +17,19 @@ keyword_asciifolding = analyzer(
 	filter=["lowercase", "asciifolding"]
 )
 
+custom_sort_normalizer = normalizer(
+    "custom_sort_normalizer",
+    type="custom",
+    char_filter= [],
+    filter=["lowercase","asciifolding"]
+)
 
 @registry.register_document
 class DescriptorTermDocument(Document):
 	term_string = fields_dsl.TextField(
 		analyzer=standard_asciifolding,
-		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding)}
+		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding),
+		        'raw': fields_dsl.KeywordField(normalizer=custom_sort_normalizer)}
 	)
 
 	# Filter by exact field value: "pt-br", "es-es"
@@ -65,7 +72,8 @@ class DescriptorTermDocument(Document):
 class QualifierTermDocument(Document):
 	term_string = fields_dsl.TextField(
 		analyzer=standard_asciifolding,
-		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding)}
+		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding),
+		        'raw': fields_dsl.KeywordField(normalizer=custom_sort_normalizer)}
 	)
 
 	# Filter by exact field value: "pt-br", "es-es"

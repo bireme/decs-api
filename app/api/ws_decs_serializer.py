@@ -126,3 +126,111 @@ class WsDecsSerializer(Serializer):
                 parent.attrib.pop(k_attr)
 
         return tostring(etree, xml_declaration=True, encoding='utf-8')
+
+class QuickDecsSerializer(Serializer):
+    """
+    A class for serialization xml response of quick serach decs.
+    """
+
+    formats = ['json', 'xml']
+
+    content_types = {'json': 'application/json',
+                     'xml': 'application/xml'}
+
+    def to_etree(self, data, options=None, name=None, depth=0):
+        """
+        Given some data, converts that data to an ``etree.Element`` suitable
+        for use in the XML output.
+        Se eliminan los atributos type y el orden de los atributos.
+        Si un object tiene una key='attr' se agrega como atributo al Element y no como nuevos Element
+        """
+        if isinstance(data, (list, tuple)):
+            if name:
+                if name == 'objects':
+                    #modificar tag 'objects' por 'Result'
+                    element = Element('Result')
+                else:
+                    element = Element(name)
+            else:
+                #element = Element('objects')
+                element = Element('Result')
+            for item in data:
+                element.append(self.to_etree(item, options, depth=depth+1))
+                element[:] = sorted(element, key=lambda x: x.tag)
+        elif isinstance(data, dict):
+            if depth == 0:
+                if name:
+                    element = Element(name)
+                else:
+                    # raiz del tree
+                    element = Element('DeCSTermService', version="1.0")
+            else:
+                element = Element(name or 'object')
+            for (key, value) in data.items():
+                if key == 'attr':
+                    for (k_attr, v_attr) in value.items():
+                        element.set(k_attr, v_attr)
+                else:
+                    element.append(self.to_etree(value, options, name=key, depth=depth+1))
+                    element[:] = sorted(element, key=lambda x: x.tag)
+        else:
+            element = Element(name or 'value')
+            simple_data = self.to_simple(data, options)
+            data_type = get_type_string(simple_data)
+
+            if data_type != 'null':
+                if isinstance(simple_data, six.text_type):
+                    element.text = simple_data
+                else:
+                    element.text = force_text(simple_data)
+        return element
+
+    def to_xml(self, data, options=None):
+        """
+        Given some Python data, produces XML output.
+        """
+        options = options or {}
+
+        if lxml is None:
+            raise ImproperlyConfigured("Usage of the XML aspects requires lxml and defusedxml.")
+
+        data = self.to_simple(data, options)
+
+        etree = self.to_etree(data, options)
+
+        #obtener "limit" y "total_count" de informacion de paginacion (tag: "meta")
+        for elem in etree.iter('limit'):
+            count = elem.text
+        for elem in etree.iter('total_count'):
+            total = elem.text
+
+        #agregar  "count" y "total" al tag: "Result"
+        for res in etree.iter('Result'):
+            res.set("count", count)
+            res.set("total", total)
+
+        # eliminar nivel 'object'
+        # list() para q funcione ok cdo son varios resultados
+        object_list = list(etree.iter("object"))
+        for element in object_list:
+            parent = element.getparent()
+            for child in element.getchildren():
+                for k_attr, v_attr in element.attrib.items():
+                    # si 'object' tiene atributos se asignan a sus hijos
+                    child.set(k_attr, v_attr)
+                # agrega hijo de 'object' a su parent
+                parent.append(child)
+            # elimina 'object' de su parent
+            parent.remove(element)
+
+        #eliminar informacion de paginacion, tag "meta"
+        for element in etree.iter('DeCSTermService'):
+            children = element.getchildren()
+            for child in children:
+                if child.tag != "meta":
+                    continue
+                else:
+                    parent = child.getparent()
+                    parent.remove(child)
+
+        return tostring(etree, xml_declaration=True, encoding='utf-8')

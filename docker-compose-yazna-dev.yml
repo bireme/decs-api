@@ -1,0 +1,54 @@
+version: '3.4'
+
+services:
+  decs_api:
+    container_name: decs-api-app
+    build:
+      context: .
+      target: dev
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app/:/app/
+    env_file:
+      - ./conf/app-env
+    depends_on:
+      - elasticsearch
+    command: python manage.py runserver 0.0.0.0:8000
+    links:
+      - mysql
+    networks:
+      - default
+
+  mysql:
+    image: registry.nexus.red.sld.cu/mysql:5.7
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=portal_decs
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    volumes:
+      - ./db-dump:/docker-entrypoint-initdb.d
+      - ./conf:/etc/mysql/conf.d
+      - mysql_data:/var/lib/mysql
+    networks:
+      - default
+
+  elasticsearch:
+    container_name: decs-api-elasticsearch
+    image: elasticsearch:8.4.3
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+
+volumes:
+  esdata:
+  mysql_data:
