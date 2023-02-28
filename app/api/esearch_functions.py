@@ -56,7 +56,12 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 			# en los 4** si text tiene mas de una palabra devolver None, esta indexado palabra a palabra
 			must = [Q('match_none')]
 	elif op_prefix == 'words':
+		"""
 		return dict(index=['descriptor_term', 'qualifier_term', 'previous_term'],
+		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], filter=filter_gral)
+		            )
+		"""
+		return dict(index=['descriptor_term', 'qualifier_term'],
 		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], filter=filter_gral)
 		            )
 	elif op_prefix == 'quick':
