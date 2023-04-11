@@ -18,7 +18,7 @@ dev_start:
 	@docker-compose -f $(COMPOSE_FILE_DEV) up -d
 
 dev_start_api:
-	@docker-compose -f $(COMPOSE_FILE_DEV) up -d decs_api
+	@docker-compose -f $(COMPOSE_FILE_DEV) up -d decs_api_app
 
 dev_run:
 	@docker-compose -f $(COMPOSE_FILE_DEV) up
@@ -39,7 +39,14 @@ dev_rm:
 	@docker-compose -f $(COMPOSE_FILE_DEV) rm -f
 
 dev_sh:
-	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api sh
+	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app sh
+
+dev_create_aux_tables:
+	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py migrate thesaurus
+
+dev_populate_aux_tables:
+	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py saveauxiliardata
+
 
 ## docker-compose prod
 prod_build:
@@ -78,3 +85,10 @@ prod_migrate:
 
 prod_make_test:
 	@docker-compose --compatibility exec -T decs_api_app make test
+
+prod_create_aux_tables:
+	@docker-compose --compatibility exec decs_api_app python manage.py migrate thesaurus
+
+prod_populate_aux_tables:
+	@docker-compose --compatibility exec decs_api_app python manage.py saveauxiliardata
+
