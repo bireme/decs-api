@@ -257,7 +257,7 @@ class Command(BaseCommand):
 					'label': [
 						{"@value": "SCIENCE AND HEALTH", "@language": "en", "status": 1},
 						{"@value": "CIENCIA Y SALUD", "@language": "es", "status": 1},
-						{"@value": "ASSISTÊNCIA À SAÚDE", "@language": "pt-br", "status": 1},
+						{"@value": "CIÊNCIA E SAÚDE", "@language": "pt-br", "status": 1},
 						{"@value": "SCIENCE ET SANTÉ", "@language": "fr", "status": 1}
 					],
 					"attr": {"tree_id": "SH"}
