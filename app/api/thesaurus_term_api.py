@@ -101,11 +101,16 @@ class TermResource(Resource):
 		response = []
 		if 'words' in request.GET:
 			words = request.GET.get('words', '')
+			if words.find('$') >= 0:
+				words = words.replace('$', '*')
+
 			search_words = get_search_q('words', words, None, status, lang_code, ths)
 			response = execute_simple_search(search_words)
 
 		elif 'bool' in request.GET:
 			bool_query = request.GET.get('bool', '')
+			if bool_query.find('$') >= 0:
+				bool_query = bool_query.replace('$', '*')
 
 			query_parts = f_parse(bool_query)
 			#if query_parts:

@@ -102,8 +102,16 @@ class QuickTermResource(Resource):
 		items = []
 		if 'query' in request.GET:
 			query = request.GET.get('query', '')
+			if query.find('$') >= 0:
+				query = query.replace('$', '*')
+
+			if query.find('*') >= 0 :
+				query0 = query.replace('*', '')
+			else:
+				query0 = query
+
 			#Get TOP two results (exact term and qualifier)
-			exact_search = get_search_q('103', query, None, status, lang_code, ths)
+			exact_search = get_search_q('103', query0, None, status, lang_code, ths)
 			items = execute_quick_search(exact_search)
 
 			quick_search = get_search_q('quick', query, None, status, lang_code, ths)
