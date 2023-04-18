@@ -257,7 +257,7 @@ class Command(BaseCommand):
 					'label': [
 						{"@value": "SCIENCE AND HEALTH", "@language": "en", "status": 1},
 						{"@value": "CIENCIA Y SALUD", "@language": "es", "status": 1},
-						{"@value": "ASSISTÊNCIA À SAÚDE", "@language": "pt-br", "status": 1},
+						{"@value": "CIÊNCIA E SAÚDE", "@language": "pt-br", "status": 1},
 						{"@value": "SCIENCE ET SANTÉ", "@language": "fr", "status": 1}
 					],
 					"attr": {"tree_id": "SH"}
@@ -300,10 +300,10 @@ class Command(BaseCommand):
 				'decs_code': "59614",
 				'self_term': {
 					'label': [
-						{"@value": "HEALTH SURVEILLANCE", "@language": "en", "status": 1},
-						{"@value": "VIGILANCIA SANITARIA", "@language": "es", "status": 1},
-						{"@value": "VIGILÂNCIA SANITÁRIA", "@language": "pt-br", "status": 1},
-						{"@value": "SURVEILLANCE SANITAIRE", "@language": "fr", "status": 1}
+						{"@value": "SURVEILLANCE IN PUBLIC HEALTH", "@language": "en", "status": 1},
+						{"@value": "VIGILANCIA DE LA SALUD", "@language": "es", "status": 1},
+						{"@value": "VIGILÂNCIA EM SAÚDE", "@language": "pt-br", "status": 1},
+						{"@value": "SURVEILLANCE DE LA SANTÉ PUBLIQUE", "@language": "fr", "status": 1}
 					],
 					"attr": {"tree_id": "VS"}
 				}

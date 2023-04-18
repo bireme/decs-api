@@ -196,7 +196,7 @@ class TermResource(Resource):
 					'ancestors': {},
 					'preceding_sibling': {},
 					'following_sibling': {},
-					'descendant': {'term_list': descendants, 'attr': {'lang': lang}}
+					'descendants': {'term_list': descendants, 'attr': {'lang': lang}}
 				},
 				'record_list': {
 					'record': {
