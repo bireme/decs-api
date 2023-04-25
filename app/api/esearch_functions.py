@@ -7,13 +7,14 @@ from django.http import Http404
 
 def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None):
 	"""
-	Funcion que a partir de la opcion o prefijo y el texto devuelve en que indices de ElasticSearch buscar y la expresion de
-	busqueda correspondiente, expresada con la funcion Q().
+	Funcion que a partir de la opcion o prefijo y el texto devuelve: indices donde buscar y la expresion de
+	busqueda, expresada con la funcion Q(). Admite wildcard * para opciones words, quick y prefijos de bool que comienzan con 1
 
 	:param op_prefix: 'tree_id' para opcion tree_id
 										'words' para opcion words
 										 prefijo (de opcion bool) con el que se especifica el indice donde realizar la busqueda.
 								     prefijos validos: 101-107 y 401-407,
+								     'quick': para api de busqueda rapida
 	:param text: Texto a buscar
 	:param op: Por defecto None, utilizado para chequear operaciones de AND NOT, cualquier otro valor se ignora
 							Si op='AND NOT' utiliza la condicion must_not, en caso contrario utiliza must.
@@ -46,11 +47,19 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 	# condiciones de busqueda must para op_prefix 1## y op_prefix 4##
 	if op_prefix[0] == '1':
 		# texto completo
-		must = [Q('match', term_string__full_field=text)]
+		if text.find('*') >= 0 :
+			# truncated search
+			must = [Q('wildcard', term_string__full_field=text)]
+		else:
+			must = [Q('match', term_string__full_field=text)]
 	elif op_prefix[0] == '4':
 		# palabra a palabra
 		if len(text.split()) == 1:
 			# si una sola palabra
+			#if text.find('*') >= 0:
+				# truncated search, aqui da error wildcard no admite query
+			#	must = [Q('wildcard', term_string={"query": text, "analyzer": "keyword_asciifolding"})]
+			#else:
 			must = [Q('match', term_string={"query": text, "analyzer": "keyword_asciifolding"})]
 		else:
 			# en los 4** si text tiene mas de una palabra devolver None, esta indexado palabra a palabra
@@ -61,20 +70,34 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], filter=filter_gral)
 		            )
 		"""
+		if text.find('*') >= 0 :
+			# truncated search
+			must_words = [Q('wildcard', term_string=text)]
+		else:
+			must_words = [Q('match', term_string={"query": text, "operator": "AND"})]
+
 		return dict(index=['descriptor_term', 'qualifier_term'],
-		            query=Q('bool', must=[Q('match', term_string={"query": text,"operator": "AND"})], filter=filter_gral)
+		            query=Q('bool', must = must_words, filter=filter_gral)
 		            )
 	elif op_prefix == 'quick':
 		"""
 		busqueda rapida: terminos preferidos y sinonimos, en 'descriptor_term', 'qualifier_term'; 
 		parabra a palabra, filtro de idioma opcional 
 		"""
+
+		if text.find('*') >= 0 :
+			# truncated search
+			must_words = [Q('wildcard', term_string=text)]
+		else:
+			must_words = [Q('match', term_string={"query": text, "operator": "AND"})]
+
 		# must_not es-es si lang_code == None
 		if lang_code == None:
-			query_q = Q('bool', must=[Q('match', term_string={"query": text, "operator": "AND"})],
+			query_q = Q('bool', must = must_words,
 			            must_not=[Q('match', language_code="es-es")], filter=filter_gral)
 		else:
-			query_q = Q('bool', must=[Q('match', term_string={"query": text, "operator": "AND"})], filter=filter_gral)
+			query_q = Q('bool', must = must_words, filter=filter_gral)
+
 		return dict(index=['descriptor_term', 'qualifier_term'],
 		            query=query_q
 		            )
@@ -196,7 +219,7 @@ def execute_quick_search(simple_search, sort=None):
 	if sort == None:
 		s = Search(index=simple_search['index']).query(simple_search['query']).extra(size=2)
 	else: #raw es tipo keyword
-		s = Search(index=simple_search['index']).query(simple_search['query']).sort({'term_string.raw':'asc'})
+		s = Search(index=simple_search['index']).query(simple_search['query']).sort({'term_string.raw':'asc'}).extra(size=1000)
 		total = s.count()
 		s = s[0:total]  # obtener todos para que salga bien 'total' de resultados
 		#raise Http404(total)
@@ -321,6 +344,7 @@ def f_parse(query_string):
 	# word = Word(intl_printables)
 	search_text = OneOrMore(word, stopOn=oneOf("AND OR")).setName("search_text")
 	words = Combine(search_text("search_text"), adjacent=False, joinString=" ")
+
 	prefix_text = prefix + words
 	content = OneOrMore(prefix_text | words)
 	expr = infix_notation(Group(content), [('AND NOT', 2, opAssoc.RIGHT,),
