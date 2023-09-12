@@ -16,6 +16,7 @@ class Command(BaseCommand):
 		parser.add_argument('type', help="Type of tree number to save 'D' for Descriptor or 'Q' for Qualifier")
 		# parser.add_argument('--all', default=True, help='To save all Tree Numbers hierarchical information')
 		parser.add_argument('--tree_number', help='The tree number of Descriptor to save the hierarchical information ')
+		parser.add_argument('--tree_number_startswith', help='The tree numbers that start with H, M or V')
 		parser.add_argument('--total', type=int, help='Total of tree numbers to save')
 		parser.add_argument('--from', type=int, default=1, help='Start id of tree numbers (default = 1)')
 
@@ -44,6 +45,10 @@ class Command(BaseCommand):
 				tree_numbers = TreeNumbersList.objects.filter(tree_number=options['tree_number']).order_by('id')
 			except TreeNumbersList.DoesNotExist:
 				raise CommandError('Tree Number "%s" does not exist' % options['tree_number'])
+		elif options['tree_number_startswith']:
+			tree_numbers = []
+			for tn_start in ['H01', 'H02', 'V01', 'V02', 'V03', 'V04', 'M01']:
+				tree_numbers += TreeNumbersList.objects.filter(tree_number__startswith=tn_start).order_by('id')
 		elif options['total'] and options['from']:
 				tree_numbers = TreeNumbersList.objects.filter(
 					pk__in=range(options['from'], options['from'] + options['total'])).order_by('id')
@@ -54,6 +59,8 @@ class Command(BaseCommand):
 			tree_numbers = TreeNumbersList.objects.filter(pk__gte=options['from']).order_by('id')
 		else:
 			tree_numbers = TreeNumbersList.objects.all().order_by('id')
+
+		exclude = {'H': 'HP', 'M': 'MT', 'V': 'VS'}
 
 		for tree_number in tree_numbers:
 			tree_id = tree_number.tree_number
@@ -147,10 +154,30 @@ class Command(BaseCommand):
 			if tam > 4:
 				ancestor_tree_id = tree_id[0:tam - 4]
 			else:
-				ancestor_tree_id = get_category_id(tree_id)
+				ancestor_tree_id = get_category_id(tree_id) #aqui ver categorias H y HP, ...
 
 			# En 2 pasos pq no se puede relacionar mas de 3 tablas
-			sibling_list = list(TreeNumbersList.objects.annotate(tree_number_tam=Length('tree_number')).filter(
+			if ancestor_tree_id in ['H', 'M', 'V']:
+				sibling_list = list(TreeNumbersList.objects.annotate(tree_number_tam=Length('tree_number')).filter(
+				tree_number__startswith=ancestor_tree_id,
+				tree_number_tam=tam,
+				identifier__thesaurus=ths,
+				).exclude(
+					tree_number__startswith=exclude[ancestor_tree_id]
+				).order_by('tree_number').values(
+				'identifier_id',
+				'tree_number'))
+
+				with_descendant = list(TreeNumbersList.objects.annotate(
+					descendant=Substr('tree_number', 1, tam), tree_number_tam=Length('tree_number')).filter(
+					tree_number__startswith=ancestor_tree_id,
+					tree_number_tam__gt=tam,
+					identifier__thesaurus=ths,
+				).exclude(
+					tree_number__startswith=exclude[ancestor_tree_id]
+				).order_by('tree_number').values('descendant'))
+			else:
+				sibling_list = list(TreeNumbersList.objects.annotate(tree_number_tam=Length('tree_number')).filter(
 				tree_number__startswith=ancestor_tree_id,
 				tree_number_tam=tam,
 				identifier__thesaurus=ths,
@@ -158,12 +185,12 @@ class Command(BaseCommand):
 				'identifier_id',
 				'tree_number'))
 
-			with_descendant = list(TreeNumbersList.objects.annotate(
-				descendant=Substr('tree_number', 1, tam), tree_number_tam=Length('tree_number')).filter(
-				tree_number__startswith=ancestor_tree_id,
-				tree_number_tam__gt=tam,
-				identifier__thesaurus=ths,
-			).order_by('tree_number').values('descendant'))
+				with_descendant = list(TreeNumbersList.objects.annotate(
+					descendant=Substr('tree_number', 1, tam), tree_number_tam=Length('tree_number')).filter(
+					tree_number__startswith=ancestor_tree_id,
+					tree_number_tam__gt=tam,
+					identifier__thesaurus=ths,
+				).order_by('tree_number').values('descendant'))
 
 			for sibling_ids in sibling_list:
 				sibling_terms = TermList.objects.filter(

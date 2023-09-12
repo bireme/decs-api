@@ -369,7 +369,7 @@ class Command(BaseCommand):
 				}
 			},
 		]
-
+		exclude = {'H': 'HP', 'M': 'MT', 'V': 'VS'}
 		for category in first_level:
 			if category['type'] == 'Descriptor':
 				TreeNumbersList = TreeNumbersListDesc
@@ -380,19 +380,40 @@ class Command(BaseCommand):
 
 			# Una misma categoria tiene diferentes hijos en diferentes thesaurus
 			for ths in category['thesaurus']:
-				descendant_list = list(
-					TreeNumbersList.objects.annotate(tree_number_tam=Length('tree_number')).filter(
-						tree_number__startswith=category['treeNumber'],
-						tree_number_tam=3,
-						identifier__thesaurus=ths,
-					).order_by('tree_number').values('identifier_id', 'tree_number'))
+				if category['treeNumber'] in ['H', 'M', 'V']:
+					descendant_list = list(
+						TreeNumbersList.objects.annotate(tree_number_tam=Length('tree_number')).filter(
+							tree_number__startswith=category['treeNumber'],
+							tree_number_tam=3,
+							identifier__thesaurus=ths,
+						).exclude(
+							tree_number__startswith=exclude[category['treeNumber']]
+						).order_by('tree_number').values('identifier_id', 'tree_number'))
 
-				with_descendant = list(TreeNumbersList.objects.annotate(
-					descendant=Substr('tree_number', 1, 3), tree_number_tam=Length('tree_number')).filter(
-					tree_number__startswith=category['treeNumber'],
-					tree_number_tam__gt=3,
-					identifier__thesaurus=ths,
-				).order_by('tree_number').values('descendant'))
+					with_descendant = list(TreeNumbersList.objects.annotate(
+						descendant=Substr('tree_number', 1, 3), tree_number_tam=Length('tree_number')
+					).filter(
+						tree_number__startswith=category['treeNumber'],
+						tree_number_tam__gt=3,
+						identifier__thesaurus=ths,
+					).exclude(
+						tree_number__startswith=exclude[category['treeNumber']]
+					).order_by('tree_number').values('descendant'))
+
+				else:
+					descendant_list = list(
+						TreeNumbersList.objects.annotate(tree_number_tam=Length('tree_number')).filter(
+							tree_number__startswith=category['treeNumber'],
+							tree_number_tam=3,
+							identifier__thesaurus=ths,
+						).order_by('tree_number').values('identifier_id', 'tree_number'))
+
+					with_descendant = list(TreeNumbersList.objects.annotate(
+						descendant=Substr('tree_number', 1, 3), tree_number_tam=Length('tree_number')).filter(
+						tree_number__startswith=category['treeNumber'],
+						tree_number_tam__gt=3,
+						identifier__thesaurus=ths,
+					).order_by('tree_number').values('descendant'))
 
 				descendant_term_list = []
 				for descendant_ids in descendant_list:
