@@ -80,9 +80,6 @@ prod_sh:
 prod_exec_collectstatic:
 	@docker-compose --compatibility exec -T decs_api_app python manage.py collectstatic --noinput
 
-prod_migrate:
-	@docker-compose --compatibility exec -T decs_api_app python manage.py migrate
-
 prod_make_test:
 	@docker-compose --compatibility exec -T decs_api_app make test
 
@@ -91,4 +88,7 @@ prod_create_aux_tables:
 
 prod_populate_aux_tables:
 	@docker-compose --compatibility exec decs_api_app python manage.py saveauxiliardata
+
+prod_create_elasticsearch_indexes:
+	@docker-compose --compatibility exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
 
