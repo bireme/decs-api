@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  decs_api:
+  decs_api_app:
     container_name: decs-api-app
     build:
       context: .
@@ -12,11 +12,11 @@ services:
       - ./app/:/app/
     env_file:
       - ./conf/app-env
-    depends_on:
-      - elasticsearch
     command: python manage.py runserver 0.0.0.0:8000
+    networks:
+      - nginx-proxy
 
-  elasticsearch:
+  decs_api_elasticsearch:
     container_name: decs-api-elasticsearch
     image: elasticsearch:8.4.3
     volumes:
@@ -30,3 +30,7 @@ services:
 
 volumes:
   esdata:
+
+networks:
+  nginx-proxy:
+    external: true

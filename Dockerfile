@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # copy base requirements
-COPY ./requirements.txt /app/
+COPY ./requirements*.txt /app/
 
 # install base dependencies
 RUN apk add --no-cache --virtual .build-deps \
@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual .build-deps \
     libxslt-dev \
     python3-dev \
     && apk add --no-cache py3-lxml mariadb-dev \
-    && pip install --upgrade pip setuptools && pip install --no-cache-dir -r /app/requirements.txt \
+    && pip install "pip<24.1" setuptools && pip install --no-cache-dir -r /app/requirements.txt \
     && apk del .build-deps
 
 EXPOSE 8000
@@ -27,6 +27,8 @@ WORKDIR /app
 ########### DEV STAGE ###########
 FROM base AS dev
 
+# install dev dependencies
+# RUN pip install --no-cache-dir -r /app/requirements-dev.txt
 
 
 ########### PRODUCTION STAGE ###########

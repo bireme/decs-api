@@ -63,6 +63,7 @@ services:
     environment:
       - xpack.security.enabled=false
       - discovery.type=single-node
+      - ES_JAVA_OPTS=${ELASTICSEARCH_JAVA_OPTS}
     networks:
       - nginx-proxy
 
