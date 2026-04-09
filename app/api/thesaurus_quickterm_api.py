@@ -117,9 +117,8 @@ class QuickTermResource(Resource):
 			quick_search = get_search_q('quick', query, None, status, lang_code, ths)
 			terms_alph = execute_quick_search(quick_search, 'Y' )
 
-			for term in terms_alph:
-				if term not in items:
-					items.append(term)
+			# Append alphabetical results in full (with duplicates) to match old API behavior
+			items.extend(terms_alph)
 
 			if int(count) < len(items):
 				self._meta.limit = count

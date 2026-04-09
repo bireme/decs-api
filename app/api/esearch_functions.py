@@ -45,7 +45,32 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 	filter_synonym = filter_gral + [Q('term', record_preferred_term='N')]
 
 	# condiciones de busqueda must para op_prefix 1## y op_prefix 4##
-	if op_prefix[0] == '1':
+	if op_prefix == '103' and text.find('*') < 0:
+		# "Top 2 most relevant" phase for quickterm: use a relevance-scored
+		# phrase query on the analyzed term_string field so multi-word queries
+		# like "sindrome respiratoria" match terms containing that phrase.
+		# Boost terms where the query appears at the start (match_phrase_prefix)
+		# and exact full-field matches (term on .raw).
+		must = [Q('match_phrase', term_string={'query': text, 'slop': 1})]
+		should = [
+			Q('match_phrase_prefix', term_string={'query': text, 'boost': 2}),
+			Q('term', term_string__raw={'value': text, 'boost': 5}),
+		]
+
+		if lang_code is None:
+			search_q[op_prefix] = {
+				'index': ['descriptor_term', 'qualifier_term'],
+				'query': Q('bool', must=must, should=should,
+				           must_not=[Q('match', language_code="es-es")],
+				           filter=filter_gral)
+			}
+		else:
+			search_q[op_prefix] = {
+				'index': ['descriptor_term', 'qualifier_term'],
+				'query': Q('bool', must=must, should=should, filter=filter_gral)
+			}
+		return search_q[op_prefix]
+	elif op_prefix[0] == '1':
 		# texto completo
 		if text.find('*') >= 0 :
 			# truncated search
@@ -218,8 +243,8 @@ def execute_quick_search(simple_search, sort=None):
 	"""
 	if sort == None:
 		s = Search(index=simple_search['index']).query(simple_search['query']).extra(size=2)
-	else: #raw es tipo keyword
-		s = Search(index=simple_search['index']).query(simple_search['query']).sort({'term_string.raw':'asc'}).extra(size=1000)
+	else: # sort on case-sensitive keyword (no normalizer) to match old API byte order
+		s = Search(index=simple_search['index']).query(simple_search['query']).sort({'term_string.sort':'asc'}).extra(size=1000)
 		total = s.count()
 		s = s[0:total]  # obtener todos para que salga bien 'total' de resultados
 		#raise Http404(total)
