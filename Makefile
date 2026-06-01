@@ -12,83 +12,82 @@ tag:
 
 ## docker-compose desenvolvimento
 dev_build:
-	@docker-compose -f $(COMPOSE_FILE_DEV) build
+	@docker compose -f $(COMPOSE_FILE_DEV) build
 
 dev_start:
-	@docker-compose -f $(COMPOSE_FILE_DEV) up -d
+	@docker compose -f $(COMPOSE_FILE_DEV) up -d
 
 dev_start_api:
-	@docker-compose -f $(COMPOSE_FILE_DEV) up -d decs_api_app
+	@docker compose -f $(COMPOSE_FILE_DEV) up -d decs_api_app
 
 dev_run:
-	@docker-compose -f $(COMPOSE_FILE_DEV) up
+	@docker compose -f $(COMPOSE_FILE_DEV) up
 
 dev_run_api:
-	@docker-compose -f $(COMPOSE_FILE_DEV) up decs_api
+	@docker compose -f $(COMPOSE_FILE_DEV) up decs_api
 
 dev_logs:
-	@docker-compose -f $(COMPOSE_FILE_DEV) logs -f
+	@docker compose -f $(COMPOSE_FILE_DEV) logs -f
 
 dev_stop:
-	@docker-compose -f $(COMPOSE_FILE_DEV) stop
+	@docker compose -f $(COMPOSE_FILE_DEV) stop
 
 dev_ps:
-	@docker-compose -f $(COMPOSE_FILE_DEV) ps
+	@docker compose -f $(COMPOSE_FILE_DEV) ps
 
 dev_rm:
-	@docker-compose -f $(COMPOSE_FILE_DEV) rm -f
+	@docker compose -f $(COMPOSE_FILE_DEV) rm -f
 
 dev_sh:
-	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app sh
+	@docker compose -f $(COMPOSE_FILE_DEV) exec decs_api_app sh
 
 dev_create_aux_tables:
-	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py migrate thesaurus
+	@docker compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py migrate thesaurus
 
 dev_populate_aux_tables:
-	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py saveauxiliardata
+	@docker compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py saveauxiliardata
 
 
 ## docker-compose prod
 prod_build:
-	@docker-compose --compatibility build
+	@docker compose --compatibility build
 	@docker tag $(IMAGE_TAG) $(TAG_LATEST)
 
 prod_run:
-	@docker-compose --compatibility up
+	@docker compose --compatibility up
 
 prod_run_api:
-	@docker-compose --compatibility up decs_api_app
+	@docker compose --compatibility up decs_api_app
 
 prod_start:
-	@docker-compose --compatibility up -d
+	@docker compose --compatibility up -d
 
 prod_stop:
-	@docker-compose --compatibility stop
+	@docker compose --compatibility stop
 
 prod_logs:
-	@docker-compose --compatibility logs -f
+	@docker compose --compatibility logs -f
 
 prod_ps:
-	@docker-compose --compatibility ps
+	@docker compose --compatibility ps
 
 prod_rm:
-	@docker-compose --compatibility rm -f
+	@docker compose --compatibility rm -f
 
 prod_sh:
-	@docker-compose --compatibility exec decs_api_app sh
+	@docker compose --compatibility exec decs_api_app sh
 
 prod_exec_collectstatic:
-	@docker-compose --compatibility exec -T decs_api_app python manage.py collectstatic --noinput
+	@docker compose --compatibility exec -T decs_api_app python manage.py collectstatic --noinput
 
 prod_make_test:
-	@docker-compose --compatibility exec -T decs_api_app make test
+	@docker compose --compatibility exec -T decs_api_app make test
 
 prod_create_aux_tables:
-	@docker-compose --compatibility exec decs_api_app python manage.py migrate thesaurus
+	@docker compose --compatibility exec decs_api_app python manage.py migrate thesaurus
 
 prod_populate_aux_tables:
-	@docker-compose --compatibility exec decs_api_app python manage.py saveauxiliardata
+	@docker compose --compatibility exec decs_api_app python manage.py saveauxiliardata
 
 prod_create_elasticsearch_indexes:
-	@docker-compose --compatibility exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
-
+	@docker compose --compatibility exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus

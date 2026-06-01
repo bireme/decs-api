@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   decs_api:
     container_name: decs-api-app
