@@ -52,7 +52,7 @@ services:
 
   decs_api_elasticsearch:
     container_name: decs-api-elasticsearch
-    image: elasticsearch:8.4.3
+    image: elasticsearch:8.19.16
     volumes:
       - esdata:/usr/share/elasticsearch/data
     ports:
