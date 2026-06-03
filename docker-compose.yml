@@ -34,6 +34,7 @@ services:
       - 80
     volumes:
       - ./conf/nginx:/etc/nginx/conf.d
+      - ./conf/nginx-entrypoint/30-allowed-ips.sh:/docker-entrypoint.d/30-allowed-ips.sh:ro
       - static_files:/app/static_files
       - gunisock:/tmp
     depends_on:
@@ -41,6 +42,7 @@ services:
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${VIRTUAL_HOST}
+      - ALLOWED_IPS=${ALLOWED_IPS}
     networks:
       - nginx-proxy
     deploy:
