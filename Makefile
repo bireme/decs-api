@@ -14,6 +14,9 @@ tag:
 dev_build:
 	@docker compose -f $(COMPOSE_FILE_DEV) build
 
+dev_build_no_cache:
+	@docker compose -f $(COMPOSE_FILE_DEV) build --no-cache
+
 dev_start:
 	@docker compose -f $(COMPOSE_FILE_DEV) up -d
 
@@ -54,6 +57,10 @@ dev_search_index_build:
 ## docker-compose prod
 prod_build:
 	@docker compose build
+	@docker tag $(IMAGE_TAG) $(TAG_LATEST)
+
+prod_build_no_cache:
+	@docker compose build --no-cache
 	@docker tag $(IMAGE_TAG) $(TAG_LATEST)
 
 prod_run:
