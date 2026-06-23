@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#   'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'decs_api.urls'
@@ -159,3 +160,7 @@ ELASTICSEARCH_DSL={
 ELASTICSEARCH_DSL_AUTOSYNC = False
 # Set to False not force an [index refresh] with every save
 ELASTICSEARCH_DSL_AUTO_REFRESH = False
+
+#DEBUG_TOOLBAR_CONFIG = {
+#    "SHOW_TOOLBAR_CALLBACK": lambda request: True,
+#}

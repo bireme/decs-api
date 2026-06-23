@@ -47,6 +47,9 @@ dev_create_aux_tables:
 dev_populate_aux_tables:
 	@docker-compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py saveauxiliardata
 
+dev_search_index_build:
+	@docker-compose --compatibility exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
+
 
 ## docker-compose prod
 prod_build:
@@ -89,6 +92,5 @@ prod_create_aux_tables:
 prod_populate_aux_tables:
 	@docker-compose --compatibility exec decs_api_app python manage.py saveauxiliardata
 
-prod_create_elasticsearch_indexes:
+prod_search_index_build:
 	@docker-compose --compatibility exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
-
