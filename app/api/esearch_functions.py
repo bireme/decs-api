@@ -5,6 +5,24 @@ from pyparsing import *
 # from django.shortcuts import render
 from django.http import Http404
 
+def truncated_word_must(text):
+	"""Build word-by-word AND clauses for a truncated (wildcard) quick query.
+
+	Reproduces the old API "palabra a palabra" semantics: each word is AND-ed
+	against the analyzed term_string; words containing '*' match as a wildcard,
+	the rest as an exact token match. This handles non-contiguous queries like
+	'transtorno espectro au*' where intervening words ('do') are skipped, which
+	a single wildcard on the whole string (full_field) cannot do.
+	"""
+	must = []
+	for word in text.split():
+		if '*' in word:
+			must.append(Q('wildcard', term_string=word))
+		else:
+			must.append(Q('match', term_string=word))
+	return must
+
+
 def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None):
 	"""
 	Funcion que a partir de la opcion o prefijo y el texto devuelve: indices donde buscar y la expresion de
@@ -70,6 +88,25 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 				'query': Q('bool', must=must, should=should, filter=filter_gral)
 			}
 		return search_q[op_prefix]
+	elif op_prefix == '103':
+		# "Top 2 most relevant" phase for a truncated (wildcard) quickterm query.
+		# Use the same word-by-word semantics as the 'quick' branch so the top-2
+		# matches non-contiguous queries (e.g. 'transtorno espectro au*'). Do NOT
+		# fall through to the 1## full_field wildcard, which is whole-string only.
+		must = truncated_word_must(text)
+		if lang_code is None:
+			search_q[op_prefix] = {
+				'index': ['descriptor_term', 'qualifier_term'],
+				'query': Q('bool', must=must,
+				           must_not=[Q('match', language_code="es-es")],
+				           filter=filter_gral)
+			}
+		else:
+			search_q[op_prefix] = {
+				'index': ['descriptor_term', 'qualifier_term'],
+				'query': Q('bool', must=must, filter=filter_gral)
+			}
+		return search_q[op_prefix]
 	elif op_prefix[0] == '1':
 		# texto completo
 		if text.find('*') >= 0 :
@@ -111,8 +148,8 @@ def get_search_q(op_prefix, text, op=None, status=None, lang_code=None, ths=None
 		"""
 
 		if text.find('*') >= 0 :
-			# truncated search
-			must_words = [Q('wildcard', term_string=text)]
+			# truncated search, word by word (see truncated_word_must)
+			must_words = truncated_word_must(text)
 		else:
 			must_words = [Q('match', term_string={"query": text, "operator": "AND"})]
 
@@ -230,7 +267,7 @@ def execute_simple_search(simple_search):
 	# raise Http404(result)
 	return result
 
-def execute_quick_search(simple_search, sort=None):
+def execute_quick_search(simple_search, sort=None, top_sorted=False):
 	"""
 	Ejecuta una busqueda en ElasticSearch y devuelve los terminos preferidos y sinonimos encontrados en diferentes indices.
 	Se utiliza en opcion 'quick'. 
@@ -243,6 +280,15 @@ def execute_quick_search(simple_search, sort=None):
 	"""
 	if sort == None:
 		s = Search(index=simple_search['index']).query(simple_search['query']).extra(size=2)
+		if top_sorted:
+			# A wildcard top-2 query is score-flat, so ES returns an arbitrary
+			# order. The old API ranks the preferred term first, then
+			# alphabetically (case-sensitive byte order); reproduce that so the
+			# top-2 deterministically match the old API.
+			s = s.sort(
+				{'record_preferred_term': 'desc'},  # 'Y' before 'N'
+				{'term_string.sort': 'asc'},
+			)
 	else: # sort on case-sensitive keyword (no normalizer) to match old API byte order
 		s = Search(index=simple_search['index']).query(simple_search['query']).sort({'term_string.sort':'asc'}).extra(size=1000)
 		total = s.count()
