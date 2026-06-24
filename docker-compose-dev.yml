@@ -14,19 +14,19 @@ services:
     networks:
       - nginx-proxy
 
-  # decs_api_elasticsearch:
-  #   container_name: decs-api-elasticsearch
-  #   image: elasticsearch:8.4.3
-  #   volumes:
-  #     - esdata:/usr/share/elasticsearch/data
-  #   ports:
-  #     - 9200:9200
-  #     - 9300:9300
-  #   environment:
-  #     - xpack.security.enabled=false
-  #     - discovery.type=single-node
-  #   networks:
-  #     - nginx-proxy
+  decs_api_elasticsearch:
+    container_name: decs-api-elasticsearch
+    image: elasticsearch:8.4.3
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+    networks:
+      - nginx-proxy
 
 volumes:
   esdata:
