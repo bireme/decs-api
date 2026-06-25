@@ -111,15 +111,19 @@ class QuickTermResource(Resource):
 				query0 = query
 
 			#Get TOP two results (exact term and qualifier)
-			exact_search = get_search_q('103', query0, None, status, lang_code, ths)
-			items = execute_quick_search(exact_search)
+			# Pass the wildcard-bearing query (not query0) so truncated searches
+			# keep the '*' and route through the word-by-word '103' wildcard
+			# branch in get_search_q. For non-wildcard queries query == query0.
+			exact_search = get_search_q('103', query, None, status, lang_code, ths)
+			# For wildcard queries the top-2 phase is unscored, so sort it
+			# alphabetically to match the old API's deterministic order.
+			items = execute_quick_search(exact_search, top_sorted=(query.find('*') >= 0))
 
 			quick_search = get_search_q('quick', query, None, status, lang_code, ths)
 			terms_alph = execute_quick_search(quick_search, 'Y' )
 
-			for term in terms_alph:
-				if term not in items:
-					items.append(term)
+			# Append alphabetical results in full (with duplicates) to match old API behavior
+			items.extend(terms_alph)
 
 			if int(count) < len(items):
 				self._meta.limit = count

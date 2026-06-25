@@ -14,6 +14,9 @@ tag:
 dev_build:
 	@docker compose -f $(COMPOSE_FILE_DEV) build
 
+dev_build_no_cache:
+	@docker compose -f $(COMPOSE_FILE_DEV) build --no-cache
+
 dev_start:
 	@docker compose -f $(COMPOSE_FILE_DEV) up -d
 
@@ -47,47 +50,54 @@ dev_create_aux_tables:
 dev_populate_aux_tables:
 	@docker compose -f $(COMPOSE_FILE_DEV) exec decs_api_app python manage.py saveauxiliardata
 
+dev_search_index_build:
+	@docker compose exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
+
 
 ## docker-compose prod
 prod_build:
-	@docker compose --compatibility build
+	@docker compose build
+	@docker tag $(IMAGE_TAG) $(TAG_LATEST)
+
+prod_build_no_cache:
+	@docker compose build --no-cache
 	@docker tag $(IMAGE_TAG) $(TAG_LATEST)
 
 prod_run:
-	@docker compose --compatibility up
+	@docker compose up
 
 prod_run_api:
-	@docker compose --compatibility up decs_api_app
+	@docker compose up decs_api_app
 
 prod_start:
-	@docker compose --compatibility up -d
+	@docker compose up -d
 
 prod_stop:
-	@docker compose --compatibility stop
+	@docker compose stop
 
 prod_logs:
-	@docker compose --compatibility logs -f
+	@docker compose logs -f
 
 prod_ps:
-	@docker compose --compatibility ps
+	@docker compose ps
 
 prod_rm:
-	@docker compose --compatibility rm -f
+	@docker compose rm -f
 
 prod_sh:
-	@docker compose --compatibility exec decs_api_app sh
+	@docker compose exec decs_api_app sh
 
 prod_exec_collectstatic:
-	@docker compose --compatibility exec -T decs_api_app python manage.py collectstatic --noinput
+	@docker compose exec -T decs_api_app python manage.py collectstatic --noinput
 
 prod_make_test:
-	@docker compose --compatibility exec -T decs_api_app make test
+	@docker compose exec -T decs_api_app make test
 
 prod_create_aux_tables:
-	@docker compose --compatibility exec decs_api_app python manage.py migrate thesaurus
+	@docker compose exec decs_api_app python manage.py migrate thesaurus
 
 prod_populate_aux_tables:
-	@docker compose --compatibility exec decs_api_app python manage.py saveauxiliardata
+	@docker compose exec decs_api_app python manage.py saveauxiliardata
 
-prod_create_elasticsearch_indexes:
-	@docker compose --compatibility exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
+prod_search_index_build:
+	@docker compose exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
