@@ -51,7 +51,10 @@ FROM base AS prod
 RUN uv sync --frozen --no-install-project --no-dev --project /deps
 
 # create a app user
-RUN groupadd -r appuser && useradd -r -g appuser appuser
+# -m creates /home/appuser: gunicorn 26's control socket falls back to
+# $HOME/.gunicorn/gunicorn.ctl, and without a writable home it logs
+# "Control server error: [Errno 13] Permission denied: '/home/appuser'"
+RUN groupadd -r appuser && useradd -r -m -d /home/appuser -g appuser appuser
 
 # create directory for collectstatic command
 RUN mkdir /app/static_files && chown appuser:appuser /app/static_files
