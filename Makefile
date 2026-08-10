@@ -10,6 +10,16 @@ export IMAGE_TAG=$(IMAGE_NAME):$(APP_VERSION)
 tag:
 	@echo "IMAGE TAG:" $(IMAGE_TAG)
 
+## gestion de dependencias (uv)
+## re-lock after editing pyproject.toml — the Docker build uses --frozen and
+## will fail if uv.lock is out of date
+deps_lock:
+	@uv lock
+
+## raise pinned versions within the ranges declared in pyproject.toml
+deps_upgrade:
+	@uv lock --upgrade
+
 ## docker-compose desenvolvimento
 dev_build:
 	@docker compose -f $(COMPOSE_FILE_DEV) build

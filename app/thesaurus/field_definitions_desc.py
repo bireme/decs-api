@@ -4,10 +4,8 @@
 DESCRIPTORS
 '''
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-import colander
-import deform
 import json
 
 language_choices = (('pt', 'Português'), ('es', 'Espanhol'), ('en', 'Inglês'))
@@ -103,7 +101,7 @@ field_tag_map = {
                 # geog_decs
                 'descriptor_type_geog_decs': '106',
 
-                'annotation_en': '110', 
+                'annotation_en': '110',
                 'online_note_en': '117',
                 'history_note_en': '119',
 
@@ -136,6 +134,6 @@ field_tag_map = {
 
 # 170     x       R       EntryCombinationListDesc        VER MASTER      EntryCombination xref English
 # 192     x       R       PharmacologicalActionList       term_string     Pharmacological Actions xref
-# 10      x       R                       Tree numbers for qualifiers 
-# 105     x                               Record Type 
-# 106     x       R                       Descriptor Type 
+# 10      x       R                       Tree numbers for qualifiers
+# 105     x                               Record Type
+# 106     x       R                       Descriptor Type

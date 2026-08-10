@@ -1,6 +1,6 @@
 from django_elasticsearch_dsl import Document, fields as fields_dsl
 from django_elasticsearch_dsl.registries import registry
-from elasticsearch_dsl import analyzer, normalizer
+from elasticsearch.dsl import analyzer, normalizer
 
 from thesaurus.models import TermListDesc, TermListQualif, PreviousIndexingListDesc, TreeNumbersListDesc, TreeNumbersListQualif
 

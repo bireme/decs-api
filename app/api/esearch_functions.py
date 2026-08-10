@@ -1,6 +1,6 @@
 # funciones para la busqueda en ElasticSearch y para parsear expresion bool
 
-from elasticsearch_dsl import Q, Search
+from elasticsearch.dsl import Q, Search
 from pyparsing import *
 # from django.shortcuts import render
 from django.http import Http404

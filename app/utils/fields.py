@@ -2,7 +2,7 @@
 
 from django import forms
 
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str
 from django.db.models.fields import BLANK_CHOICE_DASH
 from django.forms.utils import ValidationError
 from django.core.serializers.json import DjangoJSONEncoder
@@ -76,7 +76,7 @@ class MultipleAuxiliaryChoiceField(models.Field):
 
         return value
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection):
         return self.to_python(value)
 
     def get_db_prep_value(self, value, connection, prepared=False):

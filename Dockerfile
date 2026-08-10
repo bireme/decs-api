@@ -1,23 +1,34 @@
 ########### BASE STAGE ###########
-FROM python:3.10.8-alpine AS base
+FROM python:3.14-slim AS base
+
+# uv binary (pinned) — replaces pip for all dependency installation
+COPY --from=ghcr.io/astral-sh/uv:0.10.0 /uv /uvx /bin/
 
 # set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
+# the venv lives OUTSIDE /app: docker-compose-dev.yml bind-mounts ./app/ over /app,
+# which would shadow a venv placed inside it
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv
+# put the venv ahead of the system interpreter so `python manage.py ...` and
+# `gunicorn ...` resolve without any activation step
+ENV PATH="/opt/venv/bin:$PATH"
 
-# copy base requirements
-COPY ./requirements*.txt /app/
+# build + runtime libraries for mysqlclient (lxml ships manylinux wheels)
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        gcc \
+        pkg-config \
+        default-libmysqlclient-dev \
+        libmariadb3 \
+    && rm -rf /var/lib/apt/lists/*
 
-# install base dependencies
-RUN apk add --no-cache --virtual .build-deps \
-    gcc \
-    musl-dev \
-    libxml2-dev \
-    libxslt-dev \
-    python3-dev \
-    && apk add --no-cache py3-lxml mariadb-dev \
-    && pip install "pip<24.1" setuptools && pip install --no-cache-dir -r /app/requirements.txt \
-    && apk del .build-deps
+# dependency manifests live in their own directory so the bind-mounted /app
+# cannot hide them from uv
+WORKDIR /deps
+COPY pyproject.toml uv.lock /deps/
 
 EXPOSE 8000
 
@@ -27,21 +38,29 @@ WORKDIR /app
 ########### DEV STAGE ###########
 FROM base AS dev
 
-# install dev dependencies
-# RUN pip install --no-cache-dir -r /app/requirements-dev.txt
+# dependency layer: cached until pyproject.toml / uv.lock change.
+# --frozen fails the build if uv.lock is stale rather than silently re-resolving.
+# includes the dev dependency-group (django-debug-toolbar)
+RUN uv sync --frozen --no-install-project --project /deps
 
 
 ########### PRODUCTION STAGE ###########
 FROM base AS prod
 
+# same dependency layer, without the dev group
+RUN uv sync --frozen --no-install-project --no-dev --project /deps
+
 # create a app user
-RUN addgroup -S appuser && adduser -S appuser -G appuser
+RUN groupadd -r appuser && useradd -r -g appuser appuser
 
 # create directory for collectstatic command
-RUN mkdir /app/static_files
+RUN mkdir /app/static_files && chown appuser:appuser /app/static_files
 
 # copy project
 COPY --chown=appuser:appuser ./app/ /app/
+
+# the venv is built as root; hand it to the runtime user
+RUN chown -R appuser:appuser /opt/venv
 
 # change to the app user
 USER appuser

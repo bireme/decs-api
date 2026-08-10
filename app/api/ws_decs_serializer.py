@@ -2,7 +2,6 @@
 
 from tastypie.serializers import Serializer, get_type_string
 import datetime
-import six
 
 try:
     import defusedxml.lxml as lxml
@@ -12,7 +11,7 @@ try:
 except ImportError:
     lxml = None
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.encoding import force_text, smart_bytes
+from django.utils.encoding import force_str, smart_bytes
 
 
 class WsDecsSerializer(Serializer):
@@ -63,10 +62,10 @@ class WsDecsSerializer(Serializer):
             data_type = get_type_string(simple_data)
 
             if data_type != 'null':
-                if isinstance(simple_data, six.text_type):
+                if isinstance(simple_data, str):
                     element.text = simple_data
                 else:
-                    element.text = force_text(simple_data)
+                    element.text = force_str(simple_data)
 
         return element
 
@@ -179,10 +178,10 @@ class QuickDecsSerializer(Serializer):
             data_type = get_type_string(simple_data)
 
             if data_type != 'null':
-                if isinstance(simple_data, six.text_type):
+                if isinstance(simple_data, str):
                     element.text = simple_data
                 else:
-                    element.text = force_text(simple_data)
+                    element.text = force_str(simple_data)
         return element
 
     def to_xml(self, data, options=None):
