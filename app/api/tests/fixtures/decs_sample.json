@@ -1,0 +1,1776 @@
+[
+ {
+  "model": "thesaurus.thesaurus",
+  "pk": 1,
+  "fields": {
+   "thesaurus_name": "DeCS",
+   "thesaurus_author": "Fabio Brito",
+   "thesaurus_scope": "TesauroDeCS",
+   "thesaurus_acronym": "dcs"
+  }
+ },
+ {
+  "model": "thesaurus.thesaurus",
+  "pk": 2,
+  "fields": {
+   "thesaurus_name": "FUNASA",
+   "thesaurus_author": "Fabio Brito",
+   "thesaurus_scope": "TesauroFUNASA",
+   "thesaurus_acronym": "fns"
+  }
+ },
+ {
+  "model": "thesaurus.identifierdesc",
+  "pk": 14096,
+  "fields": {
+   "created_time": "2022-11-10T13:18:06Z",
+   "updated_time": "2022-11-10T13:18:05.741Z",
+   "created_by": null,
+   "updated_by": null,
+   "thesaurus": 1,
+   "descriptor_class": "1",
+   "descriptor_ui": "D012701",
+   "decs_code": "24311",
+   "external_code": "",
+   "nlm_class_number": "QV 126",
+   "date_created": "1999-01-01",
+   "date_revised": "2016-05-31",
+   "date_established": "1960-01-01"
+  }
+ },
+ {
+  "model": "thesaurus.identifierdesc",
+  "pk": 10673,
+  "fields": {
+   "created_time": "2020-01-01T00:00:00Z",
+   "updated_time": "2020-01-01T00:00:00Z",
+   "created_by": null,
+   "updated_by": null,
+   "thesaurus": 1,
+   "descriptor_class": "1",
+   "descriptor_ui": "D009132",
+   "decs_code": "9324",
+   "external_code": "",
+   "nlm_class_number": "",
+   "date_created": "1999-01-01",
+   "date_revised": "2016-06-13",
+   "date_established": "1960-01-01"
+  }
+ },
+ {
+  "model": "thesaurus.identifierqualif",
+  "pk": 53,
+  "fields": {
+   "created_time": "2020-01-01T00:00:00Z",
+   "updated_time": "2023-12-21T14:06:35.198Z",
+   "created_by": null,
+   "updated_by": null,
+   "thesaurus": 1,
+   "qualifier_ui": "Q000506",
+   "decs_code": "22025",
+   "external_code": "",
+   "abbreviation": "PO",
+   "date_created": "1973-12-27",
+   "date_revised": "2017-07-05",
+   "date_established": "1966-01-01"
+  }
+ },
+ {
+  "model": "thesaurus.identifierconceptlistdesc",
+  "pk": 22431,
+  "fields": {
+   "identifier": 10673,
+   "concept_ui": "M0014247",
+   "concept_relation_name": "",
+   "preferred_concept": "Y",
+   "casn1_name": "",
+   "registry_number": "",
+   "historical_annotation": null
+  }
+ },
+ {
+  "model": "thesaurus.identifierconceptlistdesc",
+  "pk": 29384,
+  "fields": {
+   "identifier": 14096,
+   "concept_ui": "M0019683",
+   "concept_relation_name": "",
+   "preferred_concept": "Y",
+   "casn1_name": "1H-Indol-5-ol, 3-(2-aminoethyl)-",
+   "registry_number": "333DO1RDJY",
+   "historical_annotation": null
+  }
+ },
+ {
+  "model": "thesaurus.identifierconceptlistdesc",
+  "pk": 29385,
+  "fields": {
+   "identifier": 14096,
+   "concept_ui": "M0019684",
+   "concept_relation_name": "REL",
+   "preferred_concept": "N",
+   "casn1_name": "",
+   "registry_number": "0",
+   "historical_annotation": null
+  }
+ },
+ {
+  "model": "thesaurus.identifierconceptlistqualif",
+  "pk": 177,
+  "fields": {
+   "identifier": 53,
+   "concept_ui": "M0030708",
+   "concept_relation_name": "",
+   "preferred_concept": "Y",
+   "casn1_name": "",
+   "registry_number": "",
+   "historical_annotation": null
+  }
+ },
+ {
+  "model": "thesaurus.identifierconceptlistqualif",
+  "pk": 178,
+  "fields": {
+   "identifier": 53,
+   "concept_ui": "M0030709",
+   "concept_relation_name": "NRW",
+   "preferred_concept": "N",
+   "casn1_name": "",
+   "registry_number": "",
+   "historical_annotation": null
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 83751,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "T027296",
+   "language_code": "en",
+   "term_string": "Muscles",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "1999-01-01",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 83752,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "T027296",
+   "language_code": "en",
+   "term_string": "Muscle",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "Y",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 83753,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "T000898384",
+   "language_code": "en",
+   "term_string": "Muscle Tissue",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2016-04-06",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 83754,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "T000898384",
+   "language_code": "en",
+   "term_string": "Muscle Tissues",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "Y",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 83755,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "T000898384",
+   "language_code": "en",
+   "term_string": "Tissue, Muscle",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "Y",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 83756,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "T000898384",
+   "language_code": "en",
+   "term_string": "Tissues, Muscle",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "Y",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 270931,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "spa0008576",
+   "language_code": "es",
+   "term_string": "Músculos",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 270932,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "spa0066516",
+   "language_code": "es",
+   "term_string": "Tejido Muscular",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2016-11-22",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 352955,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "por0009314",
+   "language_code": "pt-br",
+   "term_string": "Músculos",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 352956,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "por0075665",
+   "language_code": "pt-br",
+   "term_string": "Tecido Muscular",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2016-10-05",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 447462,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "fre0008831",
+   "language_code": "fr",
+   "term_string": "Muscles",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "2004-06-15",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 447463,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "fre0071747",
+   "language_code": "fr",
+   "term_string": "Muscle",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2006-10-30",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 570156,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "",
+   "language_code": "es-es",
+   "term_string": "músculos",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 606600,
+  "fields": {
+   "identifier_concept": 22431,
+   "status": 1,
+   "term_ui": "",
+   "language_code": "es-es",
+   "term_string": "tejido muscular",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109324,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037552",
+   "language_code": "en",
+   "term_string": "Serotonin",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "1999-01-01",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109325,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037551",
+   "language_code": "en",
+   "term_string": "5-Hydroxytryptamine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "1992-04-05",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109326,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037551",
+   "language_code": "en",
+   "term_string": "5 Hydroxytryptamine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "Y",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109327,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037555",
+   "language_code": "en",
+   "term_string": "Hippophaine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "1998-04-03",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109328,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037553",
+   "language_code": "en",
+   "term_string": "3-(2-Aminoethyl)-1H-indol-5-ol",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "1995-11-30",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109329,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037554",
+   "language_code": "en",
+   "term_string": "Enteramine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "1998-04-03",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109330,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "T037550",
+   "language_code": "en",
+   "term_string": "5-HT",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "ABB",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "1976-05-28",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 279533,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "spa0012579",
+   "language_code": "es",
+   "term_string": "Serotonina",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 279534,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "spa0037197",
+   "language_code": "es",
+   "term_string": "5-HT",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 279535,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "spa0037198",
+   "language_code": "es",
+   "term_string": "5-Hidroxitriptamina",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 361679,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "por0012434",
+   "language_code": "pt-br",
+   "term_string": "Serotonina",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 361680,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "por0036961",
+   "language_code": "pt-br",
+   "term_string": "5-HT",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 361681,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "por0036962",
+   "language_code": "pt-br",
+   "term_string": "5-Hidroxitriptamina",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2014-03-18",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 459156,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "fre0012295",
+   "language_code": "fr",
+   "term_string": "Sérotonine",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": "2004-06-15",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 459157,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "fre0091674",
+   "language_code": "fr",
+   "term_string": "5-Hydroxy-tryptamine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2008-06-16",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 459158,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "fre0091673",
+   "language_code": "fr",
+   "term_string": "5-Hydroxytryptamine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2008-06-16",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 459159,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "fre0091675",
+   "language_code": "fr",
+   "term_string": "Entéramine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2008-06-16",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 576666,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "",
+   "language_code": "es-es",
+   "term_string": "serotonina",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 616271,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "",
+   "language_code": "es-es",
+   "term_string": "5-HT",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 616272,
+  "fields": {
+   "identifier_concept": 29384,
+   "status": 1,
+   "term_ui": "",
+   "language_code": "es-es",
+   "term_string": "5-hidroxitriptamina",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 109331,
+  "fields": {
+   "identifier_concept": 29385,
+   "status": 1,
+   "term_ui": "T037556",
+   "language_code": "en",
+   "term_string": "Hydroxytryptamine",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "1992-04-05",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 459160,
+  "fields": {
+   "identifier_concept": 29385,
+   "status": 1,
+   "term_ui": "fre0091671",
+   "language_code": "fr",
+   "term_string": "Hydroxytryptamine",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2008-06-16",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistdesc",
+  "pk": 459161,
+  "fields": {
+   "identifier_concept": 29385,
+   "status": 1,
+   "term_ui": "fre0091672",
+   "language_code": "fr",
+   "term_string": "Hydroxy-tryptamine",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "entry_version": "",
+   "date_created": "2008-06-16",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 228,
+  "fields": {
+   "identifier_concept": 177,
+   "status": 1,
+   "language_code": "en",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "term_ui": "T061130",
+   "term_string": "poisoning",
+   "entry_version": "POIS",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 229,
+  "fields": {
+   "identifier_concept": 178,
+   "status": 1,
+   "language_code": "en",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "term_ui": "T061131",
+   "term_string": "poisonous effects",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 610,
+  "fields": {
+   "identifier_concept": 178,
+   "status": 1,
+   "language_code": "es",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "term_ui": "spaq040677",
+   "term_string": "efectos venenosos",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "^d2020-09-02, TermUI replaced, the old code is spaqual000061131^uadmin",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 609,
+  "fields": {
+   "identifier_concept": 177,
+   "status": 1,
+   "language_code": "es",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "term_ui": "spaq040676",
+   "term_string": "envenenamiento",
+   "entry_version": "ENV",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "^d2020-09-02, TermUI replaced, the old code is spaqual000000506^uadmin",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 1195,
+  "fields": {
+   "identifier_concept": 177,
+   "status": 1,
+   "language_code": "es-es",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "term_ui": "",
+   "term_string": "envenenamiento",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 1128,
+  "fields": {
+   "identifier_concept": 177,
+   "status": 1,
+   "language_code": "fr",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "term_ui": "",
+   "term_string": "intoxication",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 2562,
+  "fields": {
+   "identifier_concept": 178,
+   "status": 1,
+   "language_code": "pt-br",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "term_ui": "porq089381",
+   "term_string": "efeitos tóxicos",
+   "entry_version": "",
+   "date_created": "2023-12-21",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 997,
+  "fields": {
+   "identifier_concept": 178,
+   "status": 1,
+   "language_code": "pt-br",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "term_ui": "porq041064",
+   "term_string": "efeitos venenosos",
+   "entry_version": "",
+   "date_created": null,
+   "date_altered": "2023-12-21",
+   "historical_annotation": "^d2023-12-21^hefeitos venenosos^uAna.Campos^t03;^d2020-09-02, TermUI replaced, the old code is porqual000061131^uadmin",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 996,
+  "fields": {
+   "identifier_concept": 177,
+   "status": 1,
+   "language_code": "pt-br",
+   "concept_preferred_term": "N",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "N",
+   "term_ui": "porq041063",
+   "term_string": "envenenamento",
+   "entry_version": "ENV",
+   "date_created": null,
+   "date_altered": "2023-12-21",
+   "historical_annotation": "^d2023-12-21^hintoxicação^uAna.Campos^t53;^d2023-12-21^henvenenamento^uAna.Campos^t03;^d2020-09-02, TermUI replaced, the old code is porqual000000506^uadmin",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.termlistqualif",
+  "pk": 2561,
+  "fields": {
+   "identifier_concept": 177,
+   "status": 1,
+   "language_code": "pt-br",
+   "concept_preferred_term": "Y",
+   "is_permuted_term": "N",
+   "lexical_tag": "NON",
+   "record_preferred_term": "Y",
+   "term_ui": "porq089380",
+   "term_string": "intoxicação",
+   "entry_version": "",
+   "date_created": "2023-12-21",
+   "date_altered": null,
+   "historical_annotation": "",
+   "term_thesaurus": "1"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistdesc",
+  "pk": 21216,
+  "fields": {
+   "identifier": 10673,
+   "tree_number": "A02.633"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistdesc",
+  "pk": 21217,
+  "fields": {
+   "identifier": 10673,
+   "tree_number": "A10.690"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistdesc",
+  "pk": 27707,
+  "fields": {
+   "identifier": 14096,
+   "tree_number": "D02.092.211.215.801.852"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistdesc",
+  "pk": 27708,
+  "fields": {
+   "identifier": 14096,
+   "tree_number": "D03.633.100.473.914.814"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistdesc",
+  "pk": 27709,
+  "fields": {
+   "identifier": 14096,
+   "tree_number": "D23.469.050.650"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistqualif",
+  "pk": 115,
+  "fields": {
+   "identifier": 53,
+   "tree_number": "Q45.020.010"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistqualif",
+  "pk": 172,
+  "fields": {
+   "identifier": 53,
+   "tree_number": "Q60.040"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistqualif",
+  "pk": 62,
+  "fields": {
+   "identifier": 53,
+   "tree_number": "Y07.020.010"
+  }
+ },
+ {
+  "model": "thesaurus.treenumberslistqualif",
+  "pk": 63,
+  "fields": {
+   "identifier": 53,
+   "tree_number": "Y10.040"
+  }
+ },
+ {
+  "model": "thesaurus.descriptor",
+  "pk": 10673,
+  "fields": {
+   "created_time": "2025-12-11T02:12:29.306Z",
+   "updated_time": "2025-12-11T02:12:29.306Z",
+   "created_by": null,
+   "updated_by": null,
+   "thesaurus": 1,
+   "decs_code": "9324",
+   "identifier": "D009132",
+   "type": "TopicalDescriptor",
+   "active": true,
+   "label": "[{\"@value\": \"Muscles\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculos\", \"@language\": \"es-es\", \"status\": 1}]",
+   "treeNumber": "[\"A02.633\", \"A10.690\"]",
+   "allowableQualifier": "[{\"identifier\": \"Q000002\", \"abbreviation\": \"AB\", \"decs_code\": \"22005\"}, {\"identifier\": \"Q000033\", \"abbreviation\": \"AH\", \"decs_code\": \"22004\"}, {\"identifier\": \"Q000098\", \"abbreviation\": \"BS\", \"decs_code\": \"22040\"}, {\"identifier\": \"Q000737\", \"abbreviation\": \"CH\", \"decs_code\": \"29165\"}, {\"identifier\": \"Q000166\", \"abbreviation\": \"CY\", \"decs_code\": \"22010\"}, {\"identifier\": \"Q000187\", \"abbreviation\": \"DE\", \"decs_code\": \"22021\"}, {\"identifier\": \"Q000000981\", \"abbreviation\": \"DG\", \"decs_code\": \"56874\"}, {\"identifier\": \"Q000196\", \"abbreviation\": \"EM\", \"decs_code\": \"22023\"}, {\"identifier\": \"Q000201\", \"abbreviation\": \"EN\", \"decs_code\": \"22026\"}, {\"identifier\": \"Q000276\", \"abbreviation\": \"IM\", \"decs_code\": \"22038\"}, {\"identifier\": \"Q000293\", \"abbreviation\": \"IN\", \"decs_code\": \"22042\"}, {\"identifier\": \"Q000294\", \"abbreviation\": \"IR\", \"decs_code\": \"22037\"}, {\"identifier\": \"Q000378\", \"abbreviation\": \"ME\", \"decs_code\": \"22044\"}, {\"identifier\": \"Q000382\", \"abbreviation\": \"MI\", \"decs_code\": \"22046\"}, {\"identifier\": \"Q000473\", \"abbreviation\": \"PA\", \"decs_code\": \"22053\"}, {\"identifier\": \"Q000502\", \"abbreviation\": \"PH\", \"decs_code\": \"22031\"}, {\"identifier\": \"Q000503\", \"abbreviation\": \"PP\", \"decs_code\": \"22032\"}, {\"identifier\": \"Q000469\", \"abbreviation\": \"PS\", \"decs_code\": \"22051\"}, {\"identifier\": \"Q000528\", \"abbreviation\": \"RE\", \"decs_code\": \"22022\"}, {\"identifier\": \"Q000601\", \"abbreviation\": \"SU\", \"decs_code\": \"22009\"}, {\"identifier\": \"Q000637\", \"abbreviation\": \"TR\", \"decs_code\": \"22070\"}, {\"identifier\": \"Q000648\", \"abbreviation\": \"UL\", \"decs_code\": \"22071\"}, {\"identifier\": \"Q000821\", \"abbreviation\": \"VI\", \"decs_code\": \"32386\"}]",
+   "concept": "[\"M0014247\"]",
+   "preferredConcept": "M0014247",
+   "preferredTerm": "T027296",
+   "synonym": "[{\"@value\": \"Muscle\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Muscle Tissue\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Muscle Tissues\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tissue, Muscle\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tissues, Muscle\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejido Muscular\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecido Muscular\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscle\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejido muscular\", \"@language\": \"es-es\", \"status\": 1}]",
+   "seeAlso": "[{\"identifier\": \"D009213\", \"label\": [{\"@value\": \"Myography\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Miografía\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Miografia\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Myographie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"miografía\", \"@language\": \"es-es\", \"status\": 1}]}, {\"identifier\": \"D012508\", \"label\": [{\"@value\": \"Sarcolemma\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sarcolema\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sarcolema\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sarcolemme\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sarcolema\", \"@language\": \"es-es\", \"status\": 1}]}, {\"identifier\": \"D012519\", \"label\": [{\"@value\": \"Sarcoplasmic Reticulum\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Retículo Sarcoplasmático\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Retículo Sarcoplasmático\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Réticulum sarcoplasmique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"retículo sarcoplasmático\", \"@language\": \"es-es\", \"status\": 1}]}]",
+   "pharmacologicalAction": null,
+   "annotation": "[{\"@value\": \"general or unspecified; MUSCLE, STRIATED and MUSCLE, SMOOTH and specifics are available; /innerv: consider also NEUROMUSCULAR JUNCTION & MUSCLE DENERVATION; /surg: consider also SURGICAL FLAPS; /embryol: coordinate with MUSCLE DEVELOPMENT if pertinent; inflammation = MYOSITIS\", \"@language\": \"en\"}, {\"@value\": \"GER o no especificado; MÚSCULO ESQUÉLETICO y MÚSCULO LISO y sus específicos están disponibles; /inerv: vea también UNIÓN NEUROMUSCULAR & DESNERVACIÓN MUSCULAR; /cirug: vea también COLGAJOS QUIRÚRGICOS; /embriol: coord con DESARROLLO DE MÚSCULOS si pertinente; inflamación = MIOSITIS\", \"@language\": \"es\"}, {\"@value\": \"GER ou não especificado; MÚSCULO ESQUELÉTICO e MÚSCULO LISO e seus específicos estão disponíveis; /inerv: veja também UN\", \"@language\": \"pt-br\"}]",
+   "considerAlso": "[{\"@value\": \"consider also terms at MYO-\", \"@language\": \"en\"}, {\"@value\": \"MIO-\", \"@language\": \"es\"}, {\"@value\": \"MIO-\", \"@language\": \"pt-br\"}]",
+   "onlineNote": null,
+   "historyNote": "[{\"@value\": \"/transplantation was MUSCLE TRANSPLANTATION 1963-65\", \"@language\": \"en\"}]",
+   "publicMeSHNote": "[{\"@value\": \"/transplantation was MUSCLE TRANSPLANTATION 1963-65\", \"@language\": \"en\"}]",
+   "previousIndexing": null,
+   "scopeNote": "[{\"@value\": \"Contractile tissue that produces movement in animals.\", \"@language\": \"en\"}, {\"@value\": \"Tejido contráctil que produce movimiento en los animales.\", \"@language\": \"es\"}, {\"@value\": \"Tecidos contráteis que produzem movimentos nos animais.\", \"@language\": \"pt-br\"}, {\"@value\": \"Tejido contráctil que produce movimiento en los animales.\", \"@language\": \"es-es\"}]",
+   "entryCombination": "[{\"label\": [{\"@value\": \"Muscle Development\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Desarrollo de Músculos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Desenvolvimento Muscular\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Développement musculaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"desarrollo muscular\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"sh_abbr1\": \"GD\"}}]",
+   "nlmClassificationNumber": "",
+   "date_created": "1999-01-01",
+   "date_revised": "2016-06-13",
+   "date_established": "1960-01-01"
+  }
+ },
+ {
+  "model": "thesaurus.descriptor",
+  "pk": 14096,
+  "fields": {
+   "created_time": "2025-12-11T03:59:38.865Z",
+   "updated_time": "2025-12-11T03:59:38.865Z",
+   "created_by": null,
+   "updated_by": null,
+   "thesaurus": 1,
+   "decs_code": "24311",
+   "identifier": "D012701",
+   "type": "TopicalDescriptor",
+   "active": true,
+   "label": "[{\"@value\": \"serotonina\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Sérotonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Serotonin\", \"@language\": \"en\", \"status\": 1}]",
+   "treeNumber": "[\"D02.092.211.215.801.852\", \"D03.633.100.473.914.814\", \"D23.469.050.650\"]",
+   "allowableQualifier": "[{\"identifier\": \"Q000031\", \"abbreviation\": \"AA\", \"decs_code\": \"22003\"}, {\"identifier\": \"Q000008\", \"abbreviation\": \"AD\", \"decs_code\": \"22000\"}, {\"identifier\": \"Q000009\", \"abbreviation\": \"AE\", \"decs_code\": \"22020\"}, {\"identifier\": \"Q000032\", \"abbreviation\": \"AN\", \"decs_code\": \"22002\"}, {\"identifier\": \"Q000096\", \"abbreviation\": \"BI\", \"decs_code\": \"22007\"}, {\"identifier\": \"Q000097\", \"abbreviation\": \"BL\", \"decs_code\": \"22062\"}, {\"identifier\": \"Q000134\", \"abbreviation\": \"CF\", \"decs_code\": \"22043\"}, {\"identifier\": \"Q000737\", \"abbreviation\": \"CH\", \"decs_code\": \"29165\"}, {\"identifier\": \"Q000145\", \"abbreviation\": \"CL\", \"decs_code\": \"22011\"}, {\"identifier\": \"Q000138\", \"abbreviation\": \"CS\", \"decs_code\": \"22065\"}, {\"identifier\": \"Q000172\", \"abbreviation\": \"DF\", \"decs_code\": \"22015\"}, {\"identifier\": \"Q000191\", \"abbreviation\": \"EC\", \"decs_code\": \"22018\"}, {\"identifier\": \"Q000235\", \"abbreviation\": \"GE\", \"decs_code\": \"22033\"}, {\"identifier\": \"Q000266\", \"abbreviation\": \"HI\", \"decs_code\": \"22034\"}, {\"identifier\": \"Q000276\", \"abbreviation\": \"IM\", \"decs_code\": \"22038\"}, {\"identifier\": \"Q000302\", \"abbreviation\": \"IP\", \"decs_code\": \"22001\"}, {\"identifier\": \"Q000378\", \"abbreviation\": \"ME\", \"decs_code\": \"22044\"}, {\"identifier\": \"Q000494\", \"abbreviation\": \"PD\", \"decs_code\": \"22078\"}, {\"identifier\": \"Q000502\", \"abbreviation\": \"PH\", \"decs_code\": \"22031\"}, {\"identifier\": \"Q000493\", \"abbreviation\": \"PK\", \"decs_code\": \"22079\"}, {\"identifier\": \"Q000506\", \"abbreviation\": \"PO\", \"decs_code\": \"22025\"}, {\"identifier\": \"Q000528\", \"abbreviation\": \"RE\", \"decs_code\": \"22022\"}, {\"identifier\": \"Q000600\", \"abbreviation\": \"SD\", \"decs_code\": \"22055\"}, {\"identifier\": \"Q000592\", \"abbreviation\": \"ST\", \"decs_code\": \"22048\"}, {\"identifier\": \"Q000633\", \"abbreviation\": \"TO\", \"decs_code\": \"22068\"}, {\"identifier\": \"Q000627\", \"abbreviation\": \"TU\", \"decs_code\": \"22073\"}, {\"identifier\": \"Q000652\", \"abbreviation\": \"UR\", \"decs_code\": \"22050\"}]",
+   "concept": "[\"M0019683\", \"M0019684\"]",
+   "preferredConcept": "M0019683",
+   "preferredTerm": "T037552",
+   "synonym": "[{\"@value\": \"5-Hydroxytryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"5-hidroxitriptamina\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"5-HT\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Entéramine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"5-Hydroxytryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"5-Hydroxy-tryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"5-Hidroxitriptamina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"5-HT\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"5-Hidroxitriptamina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"5-HT\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"5-HT\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enteramine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"3-(2-Aminoethyl)-1H-indol-5-ol\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Hippophaine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"5 Hydroxytryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Hydroxytryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Hydroxytryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Hydroxy-tryptamine\", \"@language\": \"fr\", \"status\": 1}]",
+   "seeAlso": "[{\"identifier\": \"D011985\", \"label\": [{\"@value\": \"Receptors, Serotonin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Receptores de Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Receptores de Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Récepteurs sérotoninergiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"receptores de serotonina\", \"@language\": \"es-es\", \"status\": 1}]}, {\"identifier\": \"D018490\", \"label\": [{\"@value\": \"Serotonin Agents\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Serotoninérgicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Serotoninérgicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Agents sérotoninergiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"serotoninérgicos\", \"@language\": \"es-es\", \"status\": 1}]}, {\"identifier\": \"D020230\", \"label\": [{\"@value\": \"Serotonin Syndrome\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Síndrome de la Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Síndrome da Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Syndrome sérotoninergique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"síndrome de la serotonina\", \"@language\": \"es-es\", \"status\": 1}]}]",
+   "pharmacologicalAction": "[{\"identifier\": \"D017366\", \"label\": [{\"@value\": \"Serotonin Receptor Agonists\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Agonistas de Receptores de Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Agonistas do Receptor de Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Agonistes des récepteurs de la sérotonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"agonistas de receptores de serotonina\", \"@language\": \"es-es\", \"status\": 1}]}]",
+   "annotation": "[{\"@value\": \"/antag = SEROTONIN ANTAGONISTS but consider also SELECTIVE SEROTONIN REUPTAKE INHIBITORS\", \"@language\": \"en\"}, {\"@value\": \"/antag = ANTAGONISTAS DE LA SEROTONINA pero vea también INHIBIDORES SELECTIVOS DE LA RECAPTACIÓN DE SEROTONINA\", \"@language\": \"es\"}, {\"@value\": \"/antag = ANTAGONISTAS DA SEROTONINA mas veja também INIBIDORES SELETIVOS DA RECAPTAÇÃO DE SEROTONINA\", \"@language\": \"pt-br\"}]",
+   "considerAlso": null,
+   "onlineNote": "[{\"@value\": \"use SEROTONIN to search HYDROXYTRYPTAMINE 1975-92\", \"@language\": \"en\"}]",
+   "historyNote": "[{\"@value\": \"HYDROXYTRYPTAMINE was see SEROTONIN 1975-92\", \"@language\": \"en\"}]",
+   "publicMeSHNote": "[{\"@value\": \"HYDROXYTRYPTAMINE was see SEROTONIN 1975-92\", \"@language\": \"en\"}]",
+   "previousIndexing": null,
+   "scopeNote": "[{\"@value\": \"A biochemical messenger and regulator, synthesized from the essential amino acid L-TRYPTOPHAN. In humans it is found primarily in the central nervous system, gastrointestinal tract, and blood platelets. Serotonin mediates several important physiological functions including neurotransmission, gastrointestinal motility, hemostasis, and cardiovascular integrity. Multiple receptor families (RECEPTORS, SEROTONIN) explain the broad physiological actions and distribution of this biochemical mediator.\", \"@language\": \"en\"}, {\"@value\": \"Un mensajero bioquímico y regulador, sintetizado a partir del aminoácido esencial L-TRIPTOFANO. En los humanos se encuentra principalmente en el sistema nervioso central, tracto gastrointestinal y plaquetas. La serotonina media varias funciones fisiológicas importantes incluyendo la neurotransmisión, la movilidad gastrointestinal, la hemostasis y la integridad cardiovascular. Múltiples familias de receptores (RECEPTORES, SEROTONINA) explican su amplio espectro de acciones fisiológicas y la distribución de su mediador bioquímico.\", \"@language\": \"es\"}, {\"@value\": \"Mensageiro bioquímico e regulador, sintetizado a partir do aminoácido essencial L-TRIPTOFANO. Em humanos é geralmente encontrada no sistema nervoso central, no trato gastrointestinal e nas plaquetas sanguíneas. A serotonina está envolvida em importantes funções fisiológicas, incluindo neurotransmissão, motilidade gastrointestinal, homeostase e integridade cardiovascular. Múltiplas famílias de receptores (RECEPTORES DE SEROTONINA) explicam o amplo espectro de ações fisiológicas e distribuição deste mediador bioquímico.\", \"@language\": \"pt-br\"}, {\"@value\": \"Mensajero y regulador bioquímico, sintetizado a partir del aminoácido esencial L-TRIPTÓFANO. En los humanos se encuentra principalmente en el sistema nervioso central, el tubo digestivo y las plaquetas. La serotonina interviene en diversas funciones fisiológicas importantes icomo la neurotransmisión, la movilidad gastrointestinal, la hemostasia y la integridad cardiovascular. Las múltiples familias de receptores (RECEPTORES DE SEROTONINA) explican su amplio espectro de acciones fisiológicas y la distribución de este mediador bioquímico.\", \"@language\": \"es-es\"}]",
+   "entryCombination": "[{\"label\": [{\"@value\": \"Serotonin Antagonists\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Antagonistas de la Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Antagonistas da Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Antisérotonines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"antagonistas de la serotonina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"sh_abbr1\": \"AI\"}}, {\"label\": [{\"@value\": \"Serotonin Receptor Agonists\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Agonistas de Receptores de Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Agonistas do Receptor de Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Agonistes des récepteurs de la sérotonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"agonistas de receptores de serotonina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"sh_abbr1\": \"AG\"}}]",
+   "nlmClassificationNumber": "QV 126",
+   "date_created": "1999-01-01",
+   "date_revised": "2016-05-31",
+   "date_established": "1960-01-01"
+  }
+ },
+ {
+  "model": "thesaurus.qualifier",
+  "pk": 53,
+  "fields": {
+   "created_time": "2025-12-10T20:38:25.680Z",
+   "updated_time": "2025-12-10T20:38:25.680Z",
+   "created_by": null,
+   "updated_by": null,
+   "thesaurus": 1,
+   "decs_code": "22025",
+   "identifier": "Q000506",
+   "active": true,
+   "abbreviation": "PO",
+   "label": "[{\"@value\": \"poisoning\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"envenenamiento\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"intoxication\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"envenenamiento\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"intoxicação\", \"@language\": \"pt-br\", \"status\": 1}]",
+   "treeNumber": "[\"Q45.020.010\", \"Q60.040\", \"Y07.020.010\", \"Y10.040\"]",
+   "concept": "[\"M0030709\"]",
+   "preferredConcept": "M0030708",
+   "preferredTerm": "T061130",
+   "synonym": "[{\"@value\": \"envenenamento\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"poisonous effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"efectos venenosos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"efeitos venenosos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"efeitos tóxicos\", \"@language\": \"pt-br\", \"status\": 1}]",
+   "annotation": "[{\"@value\": \"subheading only; for clinical & veterinary only; for human & animal experiments use /toxicity; see also /adverse effects &  /toxicity\", \"@language\": \"en\"}, {\"@value\": \"solamente calificador; solamente para clínica & veterinaria; para experimentos en humanos & animales use /toxicidad; vea también /efectos adversos & /toxicidad\", \"@language\": \"es\"}, {\"@value\": \"somente qualificador; somente para clínica & veterinária; para experimentos em humanos & animais use /toxicidade; veja também /efeitos adversos & /toxicidade\", \"@language\": \"pt-br\"}]",
+   "onlineNote": "[{\"@value\": \"search policy: Online Manual; use: main heading/PO or PO (SH) or SUBS APPLY PO\", \"@language\": \"en\"}]",
+   "historyNote": "[{\"@value\": \"66; used with Category D 1966-67; D & J 1968 forward\", \"@language\": \"en\"}]",
+   "scopeNote": "[{\"@value\": \"Used with drugs, chemicals, and industrial materials for human or animal poisoning, acute or chronic, whether the poisoning is accidental, occupational, suicidal, by medication error, or by environmental exposure.\", \"@language\": \"en\"}, {\"@value\": \"S'applique aux médicaments, aux substances chimiques et aux matériaux industriels pour une intoxication humaine ou animale, aiguë ou chronique, qu'elle soit accidentelle, professionnelle, suicidaire, due à une erreur de médication ou à une exposition environnementale.\", \"@language\": \"fr\"}, {\"@value\": \"Usado con medicamentos, compuestos químicos y materiales industriales para envenenamiento humano o animal, agudo o crónico, sea este accidental, ocupacional, suicida, por error de medicación o por exposición ambiental.\", \"@language\": \"es-es\"}, {\"@value\": \"Usado con medicamentos, compuestos químicos y materiales industriales para envenenamiento humano o animal, agudo o crónico, sea éste accidental, ocupacional, suicida, por error de medicación o por exposición ambiental.\", \"@language\": \"es\"}, {\"@value\": \"Usado com medicamentos, compostos químicos e materiais industriais para envenenamento humano ou animal, agudo ou crônico, seja este envenenamento acidental, ocupacional, suicida, por erro de medicação ou por exposição ambiental.\", \"@language\": \"pt-br\"}]",
+   "date_created": "1973-12-27",
+   "date_revised": "2017-07-05",
+   "date_established": "1966-01-01"
+  }
+ },
+ {
+  "model": "thesaurus.treedescriptor",
+  "pk": 21216,
+  "fields": {
+   "created_time": "2025-12-11T13:52:49.348Z",
+   "updated_time": "2025-12-11T13:52:49.348Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "A02.633",
+   "identifier_id": 10673,
+   "ancestor": "[{\"label\": [{\"@value\": \"ANATOMY\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ANATOMÍA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ANATOMIA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"ANATOMIE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"A\"}}, {\"label\": [{\"@value\": \"Musculoskeletal System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Musculoesquelético\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Musculoesquelético\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Appareil locomoteur\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema musculoesquelético\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"Aponeurosis\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Aponeurosis\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Aponeurose\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Aponévrose\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"aponeurosis\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.083\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Cartilage\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Cartílago\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Cartilagem\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Cartilage\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"cartílago\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.165\"}}, {\"label\": [{\"@value\": \"Fascia\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fascia\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fáscia\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Fascia\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fascia\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.340\"}}, {\"label\": [{\"@value\": \"Ligaments\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ligamentos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ligamentos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Ligaments\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"ligamentos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.513\"}}]",
+   "following_sibling": "[{\"label\": [{\"@value\": \"Myotendinous Junction\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Jonction musculotendineuse\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Junção Miotendínea\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Unión Miotendinosa\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"unión miotendinosa\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.734\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Skeleton\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Esqueleto\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Esqueleto\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Squelette\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"esqueleto\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.835\"}}, {\"label\": [{\"@value\": \"Tendons\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tendones\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tendões\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tendons\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tendones\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.880\"}}]",
+   "self_term": "{\"label\": [{\"@value\": \"Muscles\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.633\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Muscle, Skeletal\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculo Esquelético\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculo Esquelético\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscles squelettiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculo esquelético\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.633.567\"}}, {\"label\": [{\"@value\": \"Muscle, Smooth\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculo Liso\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculo Liso\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscles lisses\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculo liso\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.633.570\"}}, {\"label\": [{\"@value\": \"Myocardium\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Miocardio\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Miocárdio\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Myocarde\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"miocardio\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02.633.580\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.treedescriptor",
+  "pk": 21217,
+  "fields": {
+   "created_time": "2025-12-11T13:52:49.526Z",
+   "updated_time": "2025-12-11T13:52:49.526Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "A10.690",
+   "identifier_id": 10673,
+   "ancestor": "[{\"label\": [{\"@value\": \"ANATOMY\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ANATOMÍA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ANATOMIA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"ANATOMIE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"A\"}}, {\"label\": [{\"@value\": \"Tissues\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejidos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecidos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tissus\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejidos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"Body Fluid Compartments\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compartimentos de Líquidos Corporales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compartimentos de Líquidos Corporais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Compartiments liquidiens du corps\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compartimentos líquidos corporales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.082\"}}, {\"label\": [{\"@value\": \"Connective Tissue\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejido Conectivo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecido Conjuntivo\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tissu conjonctif\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejido conectivo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.165\"}}, {\"label\": [{\"@value\": \"Epithelium\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Epitelio\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Epitélio\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Épithélium\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"epitelio\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.272\"}}, {\"label\": [{\"@value\": \"Exocrine Glands\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Glándulas Exocrinas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Glândulas Exócrinas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Glandes exocrines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"glándulas exocrinas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.336\"}}, {\"label\": [{\"@value\": \"Lymphoid Tissue\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejido Linfoide\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecido Linfoide\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tissu lymphoïde\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejido linfoide\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.549\"}}, {\"label\": [{\"@value\": \"Membranes\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Membranas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Membranas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Membranes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"membranas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.615\"}}]",
+   "following_sibling": "[{\"label\": [{\"@value\": \"Nerve Tissue\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejido Nervioso\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecido Nervoso\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tissu nerveux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejido nervioso\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.755\"}}, {\"label\": [{\"@value\": \"Organoids\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Organoides\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Organoides\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Organoïdes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"organoides\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.802\"}}, {\"label\": [{\"@value\": \"Parenchymal Tissue\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejido Parenquimatoso\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecido Parenquimatoso\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tissu parenchymateux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejido parenquimatoso\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.806\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Peritoneal Stomata\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estomas Peritoneales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estomas Peritoneais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Pores diaphragmatiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estomas peritoneales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.810\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Margins of Excision\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Márgenes de Escisión\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Margens de Excisão\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Marges d'exérèse\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"márgenes de escisión\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.830\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Surgically-Created Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras Creadas Quirúrgicamente\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Criadas Cirurgicamente\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Reconstructions chirurgicales\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras creadas quirúrgicamente\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.850\"}}]",
+   "self_term": "{\"label\": [{\"@value\": \"Muscles\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.690\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Muscle, Smooth\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculo Liso\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculo Liso\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscles lisses\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculo liso\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.690.467\"}}, {\"label\": [{\"@value\": \"Muscle, Striated\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Músculo Estriado\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Músculo Estriado\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Muscle strié\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"músculo estriado\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10.690.552\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.treedescriptor",
+  "pk": 27707,
+  "fields": {
+   "created_time": "2025-12-11T14:07:56.999Z",
+   "updated_time": "2025-12-11T14:07:56.999Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "D02.092.211.215.801.852",
+   "identifier_id": 14096,
+   "ancestor": "[{\"label\": [{\"@value\": \"CHEMICALS AND DRUGS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"COMPUESTOS QUÍMICOS Y DROGAS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"COMPOSTOS QUÍMICOS E DROGAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"PRODUITS CHIMIQUES ET MÉDICAMENTS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"D\"}}, {\"label\": [{\"@value\": \"Organic Chemicals\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Orgánicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Orgânicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés chimiques organiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos orgánicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02\"}}, {\"label\": [{\"@value\": \"Amines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Aminas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Aminas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Amines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"aminas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092\"}}, {\"label\": [{\"@value\": \"Biogenic Amines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Aminas Biogénicas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Aminas Biogênicas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Amines biogènes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"aminas biógenas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092.211\"}}, {\"label\": [{\"@value\": \"Biogenic Monoamines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Monoaminas Biogénicas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Monoaminas Biogênicas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Monoamines biogènes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"monoaminas biógenas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092.211.215\"}}, {\"label\": [{\"@value\": \"Tryptamines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Triptaminas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Triptaminas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tryptamines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"triptaminas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092.211.215.801\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"N,N-Dimethyltryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"N,N-Dimetiltriptamina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"N,N-Dimetiltriptamina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"N,N-Diméthyl-tryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"N,N-dimetiltriptamina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092.211.215.801.451\"}}]",
+   "following_sibling": null,
+   "self_term": "{\"label\": [{\"@value\": \"Serotonin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sérotonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"serotonina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092.211.215.801.852\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"5-Methoxytryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"5-Metoxitriptamina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"5-Metoxitriptamina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"5-Méthoxy-tryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"5-metoxitriptamina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02.092.211.215.801.852.611\", \"leaf\": \"true\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.treedescriptor",
+  "pk": 27708,
+  "fields": {
+   "created_time": "2025-12-11T14:07:57.164Z",
+   "updated_time": "2025-12-11T14:07:57.164Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "D03.633.100.473.914.814",
+   "identifier_id": 14096,
+   "ancestor": "[{\"label\": [{\"@value\": \"CHEMICALS AND DRUGS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"COMPUESTOS QUÍMICOS Y DROGAS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"COMPOSTOS QUÍMICOS E DROGAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"PRODUITS CHIMIQUES ET MÉDICAMENTS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"D\"}}, {\"label\": [{\"@value\": \"Heterocyclic Compounds\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Heterocíclicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Heterocíclicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés hétérocycliques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos heterocíclicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03\"}}, {\"label\": [{\"@value\": \"Heterocyclic Compounds, Fused-Ring\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Heterocíclicos de Anillos Fusionados\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Heterocíclicos de Anéis Fundidos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés hétérocycliques à cycles fusionnés\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos heterocíclicos con anillos de fusión\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633\"}}, {\"label\": [{\"@value\": \"Heterocyclic Compounds, 2-Ring\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Heterocíclicos con 2 Anillos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Heterocíclicos com 2 Anéis\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés hétérobicycliques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos heterocíclicos de 2 anillos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100\"}}, {\"label\": [{\"@value\": \"Indoles\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Indoles\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Indóis\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Indoles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"indoles\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473\"}}, {\"label\": [{\"@value\": \"Tryptamines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Triptaminas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Triptaminas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tryptamines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"triptaminas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"Dihydroxytryptamines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Dihidroxitriptaminas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Di-Hidroxitriptaminas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Dihydroxytryptamines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"dihidroxitriptaminas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.201\"}}, {\"label\": [{\"@value\": \"N,N-Dimethyltryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"N,N-Dimetiltriptamina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"N,N-Dimetiltriptamina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"N,N-Diméthyl-tryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"N,N-dimetiltriptamina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.237\"}}, {\"label\": [{\"@value\": \"Melatonin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Melatonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Melatonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Mélatonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"melatonina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.481\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Psilocybin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Psilocibina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Psilocibina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Psilocybine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"psilocibina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.700\", \"leaf\": \"true\"}}]",
+   "following_sibling": "[{\"label\": [{\"@value\": \"Sumatriptan\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sumatriptán\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sumatriptana\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sumatriptan\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sumatriptán\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.907\", \"leaf\": \"true\"}}]",
+   "self_term": "{\"label\": [{\"@value\": \"Serotonin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sérotonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"serotonina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.814\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Bufotenin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Bufotenina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Bufotenina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Bufoténine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"bufotenina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.814.150\"}}, {\"label\": [{\"@value\": \"5-Methoxytryptamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"5-Metoxitriptamina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"5-Metoxitriptamina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"5-Méthoxy-tryptamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"5-metoxitriptamina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03.633.100.473.914.814.400\", \"leaf\": \"true\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.treedescriptor",
+  "pk": 27709,
+  "fields": {
+   "created_time": "2025-12-11T14:07:57.270Z",
+   "updated_time": "2025-12-11T14:07:57.270Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "D23.469.050.650",
+   "identifier_id": 14096,
+   "ancestor": "[{\"label\": [{\"@value\": \"CHEMICALS AND DRUGS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"COMPUESTOS QUÍMICOS Y DROGAS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"COMPOSTOS QUÍMICOS E DROGAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"PRODUITS CHIMIQUES ET MÉDICAMENTS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"D\"}}, {\"label\": [{\"@value\": \"Biological Factors\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Factores Biológicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fatores Biológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Facteurs biologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"factores biológicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23\"}}, {\"label\": [{\"@value\": \"Inflammation Mediators\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Mediadores de Inflamación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Mediadores da Inflamação\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Médiateurs de l'inflammation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"mediadores de la inflamación\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469\"}}, {\"label\": [{\"@value\": \"Autacoids\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Autacoides\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Autacoides\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autacoïdes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"autacoides\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"Angiotensins\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Angiotensinas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Angiotensinas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Angiotensines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"angiotensinas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050.050\"}}, {\"label\": [{\"@value\": \"Eicosanoids\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Eicosanoides\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Eicosanoides\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Éicosanoïdes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"eicosanoides\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050.175\"}}, {\"label\": [{\"@value\": \"Histamine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Histamina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Histamina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Histamine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"histamina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050.300\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Kinins\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Cininas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Kinines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"cininas\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Cininas\", \"@language\": \"es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050.375\"}}, {\"label\": [{\"@value\": \"Platelet Activating Factor\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Factor de Activación Plaquetaria\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fator de Ativação de Plaquetas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Facteur d'activation plaquettaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"factor activador de plaquetas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050.600\", \"leaf\": \"true\"}}]",
+   "following_sibling": null,
+   "self_term": "{\"label\": [{\"@value\": \"Serotonin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Serotonina\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sérotonine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"serotonina\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23.469.050.650\", \"leaf\": \"true\"}}",
+   "descendant": null
+  }
+ },
+ {
+  "model": "thesaurus.treequalifier",
+  "pk": 62,
+  "fields": {
+   "created_time": "2025-12-10T20:38:33.010Z",
+   "updated_time": "2025-12-10T20:38:33.010Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Y07.020.010",
+   "identifier_id": 53,
+   "ancestor": "[{\"label\": [{\"@value\": \"Other Qualifiers\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Otros Calificadores\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Outros qualificadores\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autres qualifications\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y\"}}, {\"label\": [{\"@value\": \"/pharmacology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/pharmacologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/farmacologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y07\"}}, {\"label\": [{\"@value\": \"/adverse effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets indésirables\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos adversos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y07.020\"}}]",
+   "preceding_sibling": null,
+   "following_sibling": "[{\"label\": [{\"@value\": \"/toxicity\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/toxicidad\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/toxicidad\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/toxicité\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/toxicidade\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y07.020.020\", \"leaf\": \"true\"}}]",
+   "self_term": "{\"label\": [{\"@value\": \"/poisoning\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/intoxication\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/intoxicação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y07.020.010\", \"leaf\": \"true\"}}",
+   "descendant": null
+  }
+ },
+ {
+  "model": "thesaurus.treequalifier",
+  "pk": 63,
+  "fields": {
+   "created_time": "2025-12-10T20:38:33.039Z",
+   "updated_time": "2025-12-10T20:38:33.039Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Y10.040",
+   "identifier_id": 53,
+   "ancestor": "[{\"label\": [{\"@value\": \"Other Qualifiers\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Otros Calificadores\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Outros qualificadores\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autres qualifications\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y\"}}, {\"label\": [{\"@value\": \"/therapeutic use\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/usage thérapeutique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/uso terapêutico\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y10\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"/administration & dosage\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/administración & dosificación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/administración & dosificación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/administration et posologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/administração & dosagem\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y10.010\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/adverse effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets indésirables\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos adversos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y10.020\", \"leaf\": \"true\"}}]",
+   "following_sibling": null,
+   "self_term": "{\"label\": [{\"@value\": \"/poisoning\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/intoxication\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/intoxicação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y10.040\", \"leaf\": \"true\"}}",
+   "descendant": null
+  }
+ },
+ {
+  "model": "thesaurus.treequalifier",
+  "pk": 115,
+  "fields": {
+   "created_time": "2025-12-10T20:38:36.202Z",
+   "updated_time": "2025-12-10T20:38:36.202Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Q45.020.010",
+   "identifier_id": 53,
+   "ancestor": "[{\"label\": [{\"@value\": \"Other Qualifiers\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Otros Calificadores\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Outros qualificadores\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autres qualifications\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q\"}}, {\"label\": [{\"@value\": \"/pharmacology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/pharmacologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/farmacologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q45\"}}, {\"label\": [{\"@value\": \"/adverse effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets indésirables\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos adversos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q45.020\"}}]",
+   "preceding_sibling": null,
+   "following_sibling": "[{\"label\": [{\"@value\": \"/toxicity\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/toxicidad\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/toxicidad\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/toxicité\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/toxicidade\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q45.020.020\", \"leaf\": \"true\"}}]",
+   "self_term": "{\"label\": [{\"@value\": \"/poisoning\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/intoxication\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/intoxicação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q45.020.010\", \"leaf\": \"true\"}}",
+   "descendant": null
+  }
+ },
+ {
+  "model": "thesaurus.treequalifier",
+  "pk": 172,
+  "fields": {
+   "created_time": "2025-12-10T20:38:39.746Z",
+   "updated_time": "2025-12-10T20:38:39.746Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Q60.040",
+   "identifier_id": 53,
+   "ancestor": "[{\"label\": [{\"@value\": \"Other Qualifiers\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Otros Calificadores\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Outros qualificadores\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autres qualifications\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q\"}}, {\"label\": [{\"@value\": \"/therapeutic use\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/usage thérapeutique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/uso terapêutico\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q60\"}}]",
+   "preceding_sibling": "[{\"label\": [{\"@value\": \"/administration & dosage\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/administración & dosificación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/administración & dosificación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/administration et posologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/administração & dosagem\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q60.010\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/adverse effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos adversos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets indésirables\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos adversos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q60.020\", \"leaf\": \"true\"}}]",
+   "following_sibling": null,
+   "self_term": "{\"label\": [{\"@value\": \"/poisoning\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/envenenamiento\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/intoxication\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/intoxicação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q60.040\", \"leaf\": \"true\"}}",
+   "descendant": null
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 1,
+  "fields": {
+   "created_time": "2025-12-10T20:38:17.181Z",
+   "updated_time": "2025-12-10T20:38:17.181Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "A",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"ANATOMY\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ANATOMÍA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ANATOMIA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"ANATOMIE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"A\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Body Regions\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Regiones Corporales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Regiões do Corpo\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Régions du corps\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"regiones corporales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A01\"}}, {\"label\": [{\"@value\": \"Musculoskeletal System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Musculoesquelético\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Musculoesquelético\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Appareil locomoteur\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema musculoesquelético\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A02\"}}, {\"label\": [{\"@value\": \"Digestive System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Digestivo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Digestório\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Système digestif\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema digestivo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A03\"}}, {\"label\": [{\"@value\": \"Respiratory System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Respiratorio\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Respiratório\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Appareil respiratoire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema respiratorio\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A04\"}}, {\"label\": [{\"@value\": \"Urogenital System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Urogenital\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Urogenital\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Appareil urogénital\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema urogenital\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A05\"}}, {\"label\": [{\"@value\": \"Endocrine System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Endocrino\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Endócrino\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Système endocrine\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema endocrino\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A06\"}}, {\"label\": [{\"@value\": \"Cardiovascular System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Cardiovascular\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Cardiovascular\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Système cardiovasculaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema cardiovascular\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A07\"}}, {\"label\": [{\"@value\": \"Nervous System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Nervioso\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Nervoso\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Système nerveux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema nervioso\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A08\"}}, {\"label\": [{\"@value\": \"Sense Organs\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Órganos de los Sentidos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Órgãos dos Sentidos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Organes des sens\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"órganos de los sentidos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A09\"}}, {\"label\": [{\"@value\": \"Tissues\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tejidos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecidos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tissus\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tejidos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A10\"}}, {\"label\": [{\"@value\": \"Cells\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Células\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Células\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Cellules\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"células\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A11\"}}, {\"label\": [{\"@value\": \"Fluids and Secretions\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Líquidos y Secreciones\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Líquidos e Secreções\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Liquides et sécrétions biologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"líquidos y secreciones\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A12\"}}, {\"label\": [{\"@value\": \"Animal Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras Animales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Animais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures anatomiques de l'animal\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras animales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A13\"}}, {\"label\": [{\"@value\": \"Stomatognathic System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema Estomatognático\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistema Estomatognático\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Système stomatognathique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema estomatognático\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A14\"}}, {\"label\": [{\"@value\": \"Hemic and Immune Systems\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistemas Sanguíneo e Inmunológico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistemas Sanguíneo e Imunitário\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Systèmes sanguin et immunitaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistemas sanguíneo e inmunológico\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A15\"}}, {\"label\": [{\"@value\": \"Embryonic Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras Embrionarias\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Embrionárias\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures de l'embryon\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras embrionarias\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A16\"}}, {\"label\": [{\"@value\": \"Integumentary System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Integumento Común\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tegumento Comum\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Système tégumentaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"integumento común\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A17\"}}, {\"label\": [{\"@value\": \"Plant Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras de las Plantas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Vegetais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures de plante\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras de las plantas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A18\"}}, {\"label\": [{\"@value\": \"Fungal Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras Fúngicas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Fúngicas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures fongiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras fúngicas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A19\"}}, {\"label\": [{\"@value\": \"Bacterial Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras Bacterianas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Bacterianas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures bactériennes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras bacterianas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A20\"}}, {\"label\": [{\"@value\": \"Viral Structures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estructuras Virales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estruturas Virais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures virales\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"estructuras víricas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"A21\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 2,
+  "fields": {
+   "created_time": "2025-12-10T20:38:17.349Z",
+   "updated_time": "2025-12-10T20:38:17.349Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "B",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"ORGANISMS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ORGANISMOS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ORGANISMOS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"ORGANISMES\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"B\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Eukaryota\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Eucariontes\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Eucariotos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Eucaryotes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Eukaryota\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"B01\"}}, {\"label\": [{\"@value\": \"Archaea\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Archaea\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Archaea\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Archéobactéries\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Archaea\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"B02\"}}, {\"label\": [{\"@value\": \"Bacteria\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Bacterias\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Bactérias\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Bactéries\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Bacteria\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"B03\"}}, {\"label\": [{\"@value\": \"Viruses\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Virus\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Vírus\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Virus\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"virus\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"B04\"}}, {\"label\": [{\"@value\": \"Organism Forms\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Formas de los Organismos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Formas dos Organismos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Stades d'organismes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"formas de organismos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"B05\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 4,
+  "fields": {
+   "created_time": "2025-12-10T20:38:17.860Z",
+   "updated_time": "2025-12-10T20:38:17.860Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "C",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"DISEASES\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ENFERMEDADES\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"DOENÇAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"MALADIES\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"C\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Infections\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Infecções\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Infections\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"infecciones\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Infecciones\", \"@language\": \"es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C01\"}}, {\"label\": [{\"@value\": \"Neoplasms\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Neoplasias\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Neoplasias\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Tumeurs\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"neoplasias\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C04\"}}, {\"label\": [{\"@value\": \"Musculoskeletal Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Musculoesqueléticas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Musculoesqueléticas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies ostéomusculaires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades musculoesqueléticas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C05\"}}, {\"label\": [{\"@value\": \"Digestive System Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades del Sistema Digestivo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças do Sistema Digestório\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies de l'appareil digestif\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades del sistema digestivo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C06\"}}, {\"label\": [{\"@value\": \"Stomatognathic Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Estomatognáticas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Estomatognáticas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies du système stomatognathique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades estomatognáticas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C07\"}}, {\"label\": [{\"@value\": \"Respiratory Tract Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Respiratorias\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Respiratórias\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies de l'appareil respiratoire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades respiratorias\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C08\"}}, {\"label\": [{\"@value\": \"Otorhinolaryngologic Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Otorrinolaringológicas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Otorrinolaringopatias\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies oto-rhino-laryngologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades otorrinolaringológicas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C09\"}}, {\"label\": [{\"@value\": \"Nervous System Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades del Sistema Nervioso\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças do Sistema Nervoso\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies du système nerveux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades del sistema nervioso\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C10\"}}, {\"label\": [{\"@value\": \"Eye Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Oftalmopatías\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Oftalmopatias\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies de l'oeil\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"oftalmopatías\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C11\"}}, {\"label\": [{\"@value\": \"Urogenital Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Maladies urogénitales\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Doenças Urogenitais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Enfermedades Urogenitales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"enfermedades genitourinarias\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C12\"}}, {\"label\": [{\"@value\": \"Cardiovascular Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Cardiovasculares\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Cardiovasculares\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies cardiovasculaires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades cardiovasculares\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C14\"}}, {\"label\": [{\"@value\": \"Hemic and Lymphatic Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Hematológicas y Linfáticas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Sanguíneas e Linfáticas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Hémopathies et maladies lymphatiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades hematológicas y linfáticas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C15\"}}, {\"label\": [{\"@value\": \"Congenital, Hereditary, and Neonatal Diseases and Abnormalities\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades y Anomalías Neonatales Congénitas y Hereditarias\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças e Anormalidades Congênitas, Hereditárias e Neonatais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Malformations et maladies congénitales, héréditaires et néonatales\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades y anomalías neonatales congénitas y hereditarias\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C16\"}}, {\"label\": [{\"@value\": \"Skin and Connective Tissue Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades de la Piel y Tejido Conjuntivo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças da Pele e do Tecido Conjuntivo\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies de la peau et du tissu conjonctif\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades de la piel y tejido conjuntivo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C17\"}}, {\"label\": [{\"@value\": \"Nutritional and Metabolic Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Nutricionales y Metabólicas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Nutricionais e Metabólicas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies métaboliques et nutritionnelles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades nutricionales y metabólicas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C18\"}}, {\"label\": [{\"@value\": \"Endocrine System Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades del Sistema Endocrino\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças do Sistema Endócrino\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies endocriniennes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades del sistema endocrino\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C19\"}}, {\"label\": [{\"@value\": \"Immune System Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades del Sistema Inmune\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças do Sistema Imunitário\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies du système immunitaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades del sistema inmune\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C20\"}}, {\"label\": [{\"@value\": \"Disorders of Environmental Origin\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Trastornos de Origen Ambiental\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Transtornos de Origem Ambiental\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Troubles liés à l'environnement\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"trastornos de origen medioambiental\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C21\"}}, {\"label\": [{\"@value\": \"Animal Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades de los Animales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças dos Animais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies de l'animal\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades de los animales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C22\"}}, {\"label\": [{\"@value\": \"Pathological Conditions, Signs and Symptoms\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Condiciones Patológicas, Signos y Síntomas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Condições Patológicas, Sinais e Sintomas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"États, signes et symptômes pathologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"afecciones patológicas, signos y síntomas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C23\"}}, {\"label\": [{\"@value\": \"Occupational Diseases\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enfermedades Profesionales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Doenças Profissionais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Maladies professionnelles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enfermedades profesionales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C24\"}}, {\"label\": [{\"@value\": \"Chemically-Induced Disorders\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Trastornos Químicamente Inducidos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Distúrbios Induzidos Quimicamente\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Troubles dus à des produits chimiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"trastornos inducidos químicamente\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C25\"}}, {\"label\": [{\"@value\": \"Wounds and Injuries\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Heridas y Lesiones\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ferimentos e Lesões\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Plaies et blessures\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"heridas y lesiones\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"C26\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 6,
+  "fields": {
+   "created_time": "2025-12-10T20:38:18.551Z",
+   "updated_time": "2025-12-10T20:38:18.551Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "D",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"CHEMICALS AND DRUGS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"COMPUESTOS QUÍMICOS Y DROGAS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"COMPOSTOS QUÍMICOS E DROGAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"PRODUITS CHIMIQUES ET MÉDICAMENTS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"D\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Inorganic Chemicals\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Inorgánicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Inorgânicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Produits chimiques inorganiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos inorgánicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D01\"}}, {\"label\": [{\"@value\": \"Organic Chemicals\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Orgánicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Orgânicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés chimiques organiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos orgánicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D02\"}}, {\"label\": [{\"@value\": \"Heterocyclic Compounds\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Heterocíclicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Heterocíclicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés hétérocycliques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos heterocíclicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D03\"}}, {\"label\": [{\"@value\": \"Polycyclic Compounds\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Compuestos Policíclicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Compostos Policíclicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composés polycycliques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"compuestos policíclicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D04\"}}, {\"label\": [{\"@value\": \"Macromolecular Substances\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sustancias Macromoleculares\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Substâncias Macromoleculares\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Structures macromoléculaires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sustancias macromoleculares\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D05\"}}, {\"label\": [{\"@value\": \"Hormones, Hormone Substitutes, and Hormone Antagonists\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Hormonas, Sustitutos de Hormonas y Antagonistas de Hormonas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Hormônios, Substitutos de Hormônios e Antagonistas de Hormônios\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Hormones, substituts d'hormones et antagonistes d'hormones\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"hormonas, sustitutos de hormonas y antagonistas de hormonas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D06\"}}, {\"label\": [{\"@value\": \"Enzymes and Coenzymes\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Enzimas y Coenzimas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Enzimas e Coenzimas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Enzymes et coenzymes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"enzimas y coenzimas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D08\"}}, {\"label\": [{\"@value\": \"Carbohydrates\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Carbohidratos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Carboidratos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Glucides\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"hidratos de carbono\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D09\"}}, {\"label\": [{\"@value\": \"Lipids\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Lípidos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Lipídeos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Lipides\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"lípidos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D10\"}}, {\"label\": [{\"@value\": \"Amino Acids, Peptides, and Proteins\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Aminoácidos, Péptidos y Proteínas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Aminoácidos, Peptídeos e Proteínas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Acides aminés, peptides et protéines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"aminoácidos, péptidos y proteínas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D12\"}}, {\"label\": [{\"@value\": \"Nucleic Acids, Nucleotides, and Nucleosides\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ácidos Nucleicos, Nucleótidos y Nucleósidos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ácidos Nucleicos, Nucleotídeos e Nucleosídeos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Acides nucléiques, nucléotides et nucléosides\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"nucleótidos y nucleósidos de ácidos nucleicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D13\"}}, {\"label\": [{\"@value\": \"Complex Mixtures\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Mezclas Complejas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Misturas Complexas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Mélanges complexes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"mezclas complejas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D20\"}}, {\"label\": [{\"@value\": \"Biological Factors\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Factores Biológicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fatores Biológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Facteurs biologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"factores biológicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D23\"}}, {\"label\": [{\"@value\": \"Biomedical and Dental Materials\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Materiales Biomédicos y Dentales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Materiais Biomédicos e Odontológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Matériaux biomédicaux et dentaires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"materiales biomédicos y dentales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D25\"}}, {\"label\": [{\"@value\": \"Pharmaceutical Preparations\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Preparaciones Farmacéuticas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Preparações Farmacêuticas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Préparations pharmaceutiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"preparados farmacéuticos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"D26\"}}, {\"label\": [{\"@value\": \"Chemical Actions and Uses\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Acciones y Usos Químicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Actions chimiques et utilisations\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"acciones y usos químicos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Ações e Usos de Compostos Químicos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"D27\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 8,
+  "fields": {
+   "created_time": "2025-12-10T20:38:19.085Z",
+   "updated_time": "2025-12-10T20:38:19.085Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "E",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"ANALYTICAL, DIAGNOSTIC AND THERAPEUTIC TECHNIQUES, AND EQUIPMENT\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"TÉCNICAS Y EQUIPOS ANALÍTICOS, DIAGNÓSTICOS Y TERAPÉUTICOS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"TÉCNICAS E EQUIPAMENTOS ANALÍTICOS, DIAGNÓSTICOS E TERAPÊUTICOS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"TECHNIQUES ET EQUIPEMENTS ANALYTIQUES, DIAGNOSTIQUES ET THERAPEUTIQUES\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"E\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Diagnosis\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Diagnóstico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Diagnóstico\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Diagnostic\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"diagnóstico\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"E01\"}}, {\"label\": [{\"@value\": \"Therapeutics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Terapéutica\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Terapêutica\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Thérapeutique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"terapéutica\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"E02\"}}, {\"label\": [{\"@value\": \"Anesthesia and Analgesia\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Anestesia y Analgesia\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Anestesia e Analgesia\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Anesthésie et analgésie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"anestesia y analgesia\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"E03\"}}, {\"label\": [{\"@value\": \"Surgical Procedures, Operative\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Procedimientos Quirúrgicos Operativos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Procedimentos Cirúrgicos Operatórios\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Procédures de chirurgie opératoire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"intervenciones quirúrgicas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"E04\"}}, {\"label\": [{\"@value\": \"Investigative Techniques\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Técnicas de Investigación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Técnicas de Pesquisa\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Techniques d'investigation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"técnicas de investigación\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"E05\"}}, {\"label\": [{\"@value\": \"Dentistry\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Odontología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Odontologia\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Odontologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"odontología\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"E06\"}}, {\"label\": [{\"@value\": \"Equipment and Supplies\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Equipos y Suministros\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Équipement et fournitures\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"equipos y suministros\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Equipamentos e Suprimentos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"E07\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 10,
+  "fields": {
+   "created_time": "2025-12-10T20:38:19.325Z",
+   "updated_time": "2025-12-10T20:38:19.325Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "F",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"PSYCHIATRY AND PSYCHOLOGY\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"PSIQUIATRÍA Y PSICOLOGÍA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"PSIQUIATRIA E PSICOLOGIA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"PSYCHIATRIE ET PSYCHOLOGIE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"F\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Behavior and Behavior Mechanisms\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Conducta y Mecanismos de Conducta\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Comportamento e Mecanismos Comportamentais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Comportement et mécanismes comportementaux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"conducta y mecanismos de la conducta\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"F01\"}}, {\"label\": [{\"@value\": \"Psychological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Psicológicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Psicológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes psychologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos psicológicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"F02\"}}, {\"label\": [{\"@value\": \"Mental Disorders\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Trastornos Mentales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Transtornos Mentais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Troubles mentaux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"trastornos mentales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"F03\"}}, {\"label\": [{\"@value\": \"Behavioral Disciplines and Activities\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Disciplinas y Actividades Conductuales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Disciplinas e Atividades Comportamentais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Disciplines et activités comportementales\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"disciplinas y actividades conductuales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"F04\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 12,
+  "fields": {
+   "created_time": "2025-12-10T20:38:19.591Z",
+   "updated_time": "2025-12-10T20:38:19.591Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "G",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"PHENOMENA AND PROCESSES\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"FENÓMENOS Y PROCESOS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"FENÔMENOS E PROCESSOS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"PHÉNOMÈNES ET PROCESSUS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"G\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Physical Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Físicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Físicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos físicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G01\"}}, {\"label\": [{\"@value\": \"Chemical Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Químicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Químicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes chimiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos químicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G02\"}}, {\"label\": [{\"@value\": \"Metabolism\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Metabolismo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Metabolismo\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Métabolisme\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"metabolismo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G03\"}}, {\"label\": [{\"@value\": \"Cell Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos Celulares\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Celulares\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques cellulaires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos celulares\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G04\"}}, {\"label\": [{\"@value\": \"Genetic Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Genéticos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Genéticos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes génétiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos genéticos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G05\"}}, {\"label\": [{\"@value\": \"Microbiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Microbiológicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Microbiológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes microbiologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos microbiológicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G06\"}}, {\"label\": [{\"@value\": \"Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G07\"}}, {\"label\": [{\"@value\": \"Reproductive and Urinary Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos Reproductivos y Urinarios\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Reprodutivos e Urinários\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques des appareils urinaire et reproducteur\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos reproductivos y urinarios\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G08\"}}, {\"label\": [{\"@value\": \"Circulatory and Respiratory Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos Circulatorios y Respiratorios\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Circulatórios e Respiratórios\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques respiratoires et circulatoires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos respiratorios y circulatorios\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G09\"}}, {\"label\": [{\"@value\": \"Digestive System and Oral Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos Orales y del Sistema Digestivo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Orais e do Sistema Digestório\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques de l'appareil buccodentaire et de l'appareil digestif\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos orales y del sistema digestivo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G10\"}}, {\"label\": [{\"@value\": \"Musculoskeletal and Neural Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos Musculoesqueléticos y Neurales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Musculoesqueléticos e Neurais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques de l'appareil locomoteur et du système nerveux\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos nerviosos y musculoesqueléticos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G11\"}}, {\"label\": [{\"@value\": \"Immune System Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos del Sistema Inmunológico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Phénomènes du système immunitaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos del sistema inmunitario\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Fenômenos do Sistema Imunitário\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"G12\"}}, {\"label\": [{\"@value\": \"Integumentary System Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos del Integumento Común\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos do Tegumento Comum\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques du système tégumentaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos del sistema tegumentario\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G13\"}}, {\"label\": [{\"@value\": \"Ocular Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos Oculares\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Oculares\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques oculaires\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos oculares\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G14\"}}, {\"label\": [{\"@value\": \"Plant Physiological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Fisiológicos de las Plantas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Fisiológicos Vegetais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes physiologiques des plantes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos fisiológicos de las plantas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G15\"}}, {\"label\": [{\"@value\": \"Biological Phenomena\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fenómenos Biológicos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fenômenos Biológicos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Phénomènes biologiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fenómenos biológicos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G16\"}}, {\"label\": [{\"@value\": \"Mathematical Concepts\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Conceptos Matemáticos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Conceitos Matemáticos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Concepts mathématiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"conceptos matemáticos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"G17\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 14,
+  "fields": {
+   "created_time": "2025-12-10T20:38:19.808Z",
+   "updated_time": "2025-12-10T20:38:19.808Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "H",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"DISCIPLINES AND OCCUPATIONS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"DISCIPLINAS Y OCUPACIONES\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"DISCIPLINAS E OCUPAÇÕES\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"DISCIPLINES ET MÉTIERS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"H\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Natural Science Disciplines\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Disciplinas de las Ciencias Naturales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Disciplinas das Ciências Naturais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Disciplines des sciences naturelles\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"disciplinas de las ciencias naturales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"H01\"}}, {\"label\": [{\"@value\": \"Health Occupations\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Empleos en Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ocupações em Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Professions de santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"profesiones sanitarias\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"H02\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 16,
+  "fields": {
+   "created_time": "2025-12-10T20:38:20.011Z",
+   "updated_time": "2025-12-10T20:38:20.011Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "HP",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"HOMEOPATHY\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"HOMEOPATÍA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"HOMEOPATIA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"HOMÉOPATHIE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP\"}}",
+   "descendant": "[{\"label\": [], \"attr\": {\"tree_id\": \"HP0\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"Fundamentos de la Homeopatía\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fundamentos da Homeopatia\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Fondamentaux de l'Homéopathie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"fundamentos de la homeopatía\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Fundamentals of  Homeopathy\", \"@language\": \"en\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP1\"}}, {\"label\": [{\"@value\": \"Homeopathic Clinics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Clínica Homeopática\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Clínica Homeopática\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Clinique Homéopathique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"clínica homeopática\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP2\"}}, {\"label\": [{\"@value\": \"Homeopathic Therapeutics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Terapéutica Homeopática\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Terapêutica Homeopática\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Thérapeutique en Homéopathie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"terapéutica homeopática\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP3\"}}, {\"label\": [{\"@value\": \"Matéria Médica Homeopática\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Matéria Médica Homeopática\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Homeopathic Materia Medica\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Matière médicale homéopathiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"matéria médica homeopática\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP4\"}}, {\"label\": [{\"@value\": \"Homeopathic Repertory\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Répertoire Homéopathique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Repertorio Homeopático\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"repertorio homeopático\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Repertório Homeopático\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP5\"}}, {\"label\": [{\"@value\": \"Homeopathic Semiology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Semiología Homeopática\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Semiologia Homeopática\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sémiologique Homéopathique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"semiología homeopática\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP6\"}}, {\"label\": [{\"@value\": \"Farmacotécnica Homeopática\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Farmacotécnica Homeopática\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Pharmacotechniques Homéopathiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"farmacotécnicas homeopáticas\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Homeopathic Pharmacy Techniques\", \"@language\": \"en\", \"status\": 1}], \"attr\": {\"tree_id\": \"HP7\"}}, {\"label\": [], \"attr\": {\"tree_id\": \"HP9\", \"leaf\": \"true\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 18,
+  "fields": {
+   "created_time": "2025-12-10T20:38:20.191Z",
+   "updated_time": "2025-12-10T20:38:20.191Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "I",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"ANTHROPOLOGY, EDUCATION, SOCIOLOGY, AND SOCIAL PHENOMENA\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ANTROPOLOGÍA, EDUCACIÓN, SOCIOLOGÍA Y FENÓMENOS SOCIALES\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ANTROPOLOGIA, EDUCAÇÃO, SOCIOLOGIA E FENÔMENOS SOCIAIS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"ANTHROPOLOGIE, ÉDUCATION, SOCIOLOGIE ET PHÉNOMÈNES SOCIAUX\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"I\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Social Sciences\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ciencias Sociales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ciências Sociais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sciences sociales\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"ciencias sociales\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"I01\"}}, {\"label\": [{\"@value\": \"Education\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Educación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Educação\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Éducation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"educación\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"I02\"}}, {\"label\": [{\"@value\": \"Human Activities\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Actividades Humanas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Atividades Humanas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Activités humaines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"actividades humanas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"I03\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 20,
+  "fields": {
+   "created_time": "2025-12-10T20:38:20.376Z",
+   "updated_time": "2025-12-10T20:38:20.376Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "J",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"ATECHNOLOGY, INDUSTRY, AND AGRICULTURE\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"TECNOLOGÍA, INDUSTRIA Y AGRICULTURA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"TECNOLOGIA, INDÚSTRIA E AGRICULTURA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"ATECHNOLOGIE, INDUSTRIE ET AGRICULTURE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"J\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Technology, Industry, and Agriculture\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Tecnología, Industria y Agricultura\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Tecnologia, Indústria e Agricultura\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Technologie, industrie et agriculture\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"tecnología, industria y agricultura\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"J01\"}}, {\"label\": [{\"@value\": \"Food and Beverages\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Alimentos y Bebidas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Alimentos e Bebidas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Aliments et boissons\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"alimentos y bebidas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"J02\"}}, {\"label\": [{\"@value\": \"Non-Medical Public and Private Facilities\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Instalaciones Privadas y Públicas no Médicas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Instalações não Médicas Públicas e Privadas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Établissements non médicaux publics ou privés\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"instalaciones no médicas públicas y privadas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"J03\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 22,
+  "fields": {
+   "created_time": "2025-12-10T20:38:20.556Z",
+   "updated_time": "2025-12-10T20:38:20.556Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "K",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"HUMANITIES\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"HUMANIDADES\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"CIÊNCIAS HUMANAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"HUMANITÉS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"K\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Humanities\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Humanidades\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ciências Humanas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sciences humaines\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"humanidades\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"K01\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 24,
+  "fields": {
+   "created_time": "2025-12-10T20:38:20.710Z",
+   "updated_time": "2025-12-10T20:38:20.710Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "L",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"INFORMATION SCIENCE\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"CIENCIA DE LA INFORMACIÓN\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"CIÊNCIA DA INFORMAÇÃO\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"SCIENCE DE L'INFORMATION\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"L\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Information Science\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ciencia de la Información\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Ciência da Informação\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sciences de l'information\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Ciencias de la información\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"L01\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 26,
+  "fields": {
+   "created_time": "2025-12-10T20:38:21.106Z",
+   "updated_time": "2025-12-10T20:38:21.106Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "M",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"NAMED GROUPS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"DENOMINACIONES DE GRUPOS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"DENOMINAÇÕES DE GRUPOS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"GROUPES NOMMÉS\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"M\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Persons\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Personas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Pessoas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Personnes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"personas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"M01\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 43,
+  "fields": {
+   "created_time": "2025-12-10T20:38:22.905Z",
+   "updated_time": "2025-12-10T20:38:22.905Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "MT",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"TRADITIONAL, COMPLEMENTARY AND INTEGRATIVE MEDICINE\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"MEDICINAS TRADICIONALES, COMPLEMENTARIAS E INTEGRATIVAS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"MEDICINAS TRADICIONAIS, COMPLEMENTARES E INTEGRATIVAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"MÉDECINE TRADITIONNELLE, COMPLÉMENTAIRE ET INTÉGRATIVE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"MT\"}}",
+   "descendant": "[{\"label\": [], \"attr\": {\"tree_id\": \"MT0\"}}, {\"label\": [{\"@value\": \"Medicine, Traditional\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistemas Médicos Complejos Tradicionales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"sistemas médicos complejos tradicionales\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Systèmes médicaux complexes traditionnels\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Sistemas Médicos Complexos Tradicionais\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"MT1\"}}, {\"label\": [{\"@value\": \"Sistemas Médicos Complejos no Tradicionales\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Sistemas Médicos Complexos não Tradicionais\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Complex Medical Systems, Non-Traditional\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"sistemas médicos complejos no tradicionales\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Systèmes de médecine complexe non traditionnelle\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"MT2\"}}, {\"label\": [{\"@value\": \"Métodos Terapéuticos Complementarios\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Métodos Terapêuticos Complementares\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Complementary Therapeutic Methods\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"métodos terapéuticos complementarios\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Méthodes thérapeutiques complémentaires\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"MT3\"}}, {\"label\": [{\"@value\": \"Integrative Medicine\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Medicina Integrativa\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Médecine intégrative\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"medicina integradora\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Medicina Integrativa\", \"@language\": \"es\", \"status\": 1}], \"attr\": {\"tree_id\": \"MT4\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 28,
+  "fields": {
+   "created_time": "2025-12-10T20:38:21.322Z",
+   "updated_time": "2025-12-10T20:38:21.322Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "N",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"HEALTH CARE\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"ATENCIÓN DE SALUD\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ASSISTÊNCIA À SAÚDE\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"SOINS DE SANTÉ\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"N\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Population Characteristics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Características de la Población\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Características da População\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Caractéristiques de la population\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Características de la Población\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"N01\"}}, {\"label\": [{\"@value\": \"Établissements, main d'oeuvre et services de soins de santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"instalaciones, servicios y personal de asistencia sanitaria\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Health Care Facilities Workforce and Services\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Serviços e Recursos Humanos em Instituições de Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Recursos Humanos y Servicios de Instalaciones para Atención de Salud\", \"@language\": \"es\", \"status\": 1}], \"attr\": {\"tree_id\": \"N02\"}}, {\"label\": [{\"@value\": \"Health Care Economics and Organizations\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Economia e Organizações de Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Organisations et économie des soins de santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"economía y organizaciones para la atención de la salud\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Economía y Organizaciones para la Atención de la Salud\", \"@language\": \"es\", \"status\": 1}], \"attr\": {\"tree_id\": \"N03\"}}, {\"label\": [{\"@value\": \"Health Services Administration\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Administración de los Servicios de Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Administração de Serviços de Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Administration des services de santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"administración de los servicios de salud\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"N04\"}}, {\"label\": [{\"@value\": \"Health Care Quality, Access, and Evaluation\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Calidad, Acceso y Evaluación de la Atención de Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Qualidade, Acesso e Avaliação da Assistência à Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Qualité, accès, évaluation des soins de santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"calidad, acceso y evaluación de la atención sanitaria\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"N05\"}}, {\"label\": [{\"@value\": \"Environment and Public Health\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Medio Ambiente y Salud Pública\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Meio Ambiente e Saúde Pública\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Environnement et santé publique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"ambiente y salud pública\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"N06\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 30,
+  "fields": {
+   "created_time": "2025-12-10T20:38:21.557Z",
+   "updated_time": "2025-12-10T20:38:21.557Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "SH",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"SCIENCE AND HEALTH\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"CIENCIA Y SALUD\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"CIÊNCIA E SAÚDE\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"SCIENCE ET SANTÉ\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"SH\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Health Sciences, Technology, and Innovation Management\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Gestión de Ciencia, Tecnología e Innovación en Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Gestão de Ciência, Tecnologia e Inovação em Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Gestion des Sciences de la Santé, des Technologies et de l'Innovation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"gestión de ciencia, tecnología e innovación en salud\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SH1\"}}, {\"label\": [{\"@value\": \"Ciência e Desenvolvimento\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Science and Development\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ciencia y Desarrollo\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"ciencia y desarrollo\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SH2\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 32,
+  "fields": {
+   "created_time": "2025-12-10T20:38:21.800Z",
+   "updated_time": "2025-12-10T20:38:21.800Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "SP",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"PUBLIC HEALTH\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"SALUD PÚBLICA\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"SAÚDE PÚBLICA\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"SANTÉ PUBLIQUE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP\"}}",
+   "descendant": "[{\"label\": [], \"attr\": {\"tree_id\": \"SP0\"}}, {\"label\": [{\"@value\": \"Health Policy, Planning and Management\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Políticas, Planificación y Administración en Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Políticas, Planejamento e Administração em Saúde\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Gestion, Planification et Politique de Santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Políticas, Planificación y Administración en salud\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP1\"}}, {\"label\": [{\"@value\": \"Delivery of Health Care\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Prestations des soins de santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Atención a la Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"atención a la salud\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Atenção à Saúde\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP2\"}}, {\"label\": [{\"@value\": \"Population Studies in Public Health\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Estudios Poblacionales en Salud Pública\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Estudos Populacionais em Saúde Pública\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Études des Populations en Santé Publique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"Estudios Poblacionales en Salud Pública\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP3\"}}, {\"label\": [{\"@value\": \"Environmental Health\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Salud Ambiental\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Saúde Ambiental\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Santé environnementale\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"salud ambiental\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP4\"}}, {\"label\": [{\"@value\": \"Epidemiology and Biostatistics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Epidemiología y Bioestadística\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Epidemiologia e Bioestatística\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Épidémiologie et Biostatistiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"epidemiología y bioestadística\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP5\"}}, {\"label\": [{\"@value\": \"Nutritional Sciences\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ciências da Nutrição\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Sciences de la nutrition\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"ciencias de la nutrición\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Ciencias de la Nutrición\", \"@language\": \"es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP6\"}}, {\"label\": [{\"@value\": \"Disasters\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Desastres\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Desastres\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Catastrophes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"desastres\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP8\"}}, {\"label\": [{\"@value\": \"Health Law\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Derecho Sanitario\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Direito Sanitário\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Droit Sanitaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"derecho sanitario\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"SP9\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 34,
+  "fields": {
+   "created_time": "2025-12-10T20:38:22.064Z",
+   "updated_time": "2025-12-10T20:38:22.064Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "V",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"PUBLICATION CHARACTERISTICS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"CARACTERÍSTICAS DE PUBLICACIONES\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"CARACTERÍSTICAS DE PUBLICAÇÕES\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"CARACTÉRISTIQUES DE PUBLICATION\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"V\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Publication Components\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Componentes de Publicaciones\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Componentes de Publicações\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Composantes des publications\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"componentes de publicaciones\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"V01\"}}, {\"label\": [{\"@value\": \"Publication Formats\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Formatos de Publicación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Formatos de Publicação\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Catégories de publications\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"formatos de publicación\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"V02\"}}, {\"label\": [{\"@value\": \"Study Characteristics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Características del Estudio\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Características do Estudo\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Caractéristiques des études\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"características del estudio\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"V03\"}}, {\"label\": [{\"@value\": \"Support of Research\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Fuentes de Financiación de Investigación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Fontes de Financiamento de Pesquisa\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Subvention de recherche\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"soporte de la investigación\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"V04\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 35,
+  "fields": {
+   "created_time": "2025-12-10T20:38:22.159Z",
+   "updated_time": "2025-12-10T20:38:22.159Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "VS",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"SURVEILLANCE IN PUBLIC HEALTH\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"VIGILANCIA DE LA SALUD\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"VIGILÂNCIA EM SAÚDE\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"SURVEILLANCE DE LA SANTÉ PUBLIQUE\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"VS\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Health Surveillance System\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Sistema de Vigilancia Sanitaria\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Système de Surveillance de Santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"sistema de vigilancia sanitaria\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Sistema de Vigilância em Saúde\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"VS1\"}}, {\"label\": [{\"@value\": \"Health Surveillance of Products\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Vigilancia Sanitaria de Productos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Vigilância Sanitária de Produtos\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Surveillance de Santé des Produits\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"control sanitario de productos\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"VS2\"}}, {\"label\": [{\"@value\": \"Vigilancia Sanitaria de Servicios de Salud\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Surveillance Vigilance de Services de Santé\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"vigilancia sanitaria de los servicios de salud\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"Health Services Surveillance\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Vigilância de Serviços de Saúde\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"VS3\"}}, {\"label\": [{\"@value\": \"Environmental Health Surveillance\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Vigilancia Sanitaria Ambiental\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Vigilância Sanitária Ambiental\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Surveillance de Santé Environnementale\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"vigilancia en salud ambiental\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"VS4\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 37,
+  "fields": {
+   "created_time": "2025-12-10T20:38:22.337Z",
+   "updated_time": "2025-12-10T20:38:22.337Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Z",
+   "type": "Descriptor",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"GEOGRAPHICALS\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"DENOMINACIONES GEOGRÁFICAS\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"DENOMINAÇÕES GEOGRÁFICAS\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"GÉOGRAPHIQUES\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Z\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"Geographic Locations\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Ubicaciones Geográficas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Localizações Geográficas\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Régions géographiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"localizaciones geográficas\", \"@language\": \"es-es\", \"status\": 1}], \"attr\": {\"tree_id\": \"Z01\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 39,
+  "fields": {
+   "created_time": "2025-12-10T20:38:22.526Z",
+   "updated_time": "2025-12-10T20:38:22.526Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Q",
+   "type": "Qualifier",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"Other Qualifiers\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Otros Calificadores\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Outros qualificadores\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autres qualifications\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"/analysis\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/análisis\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/análisis\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/analyse\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/análise\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q05\"}}, {\"label\": [{\"@value\": \"/anatomy & histology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/anatomía & histología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/anatomía & histología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/anatomie et histologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/anatomia & histologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q10\"}}, {\"label\": [{\"@value\": \"/chemistry\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/química\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/química\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/composition chimique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/química\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q15\"}}, {\"label\": [{\"@value\": \"/classification\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/clasificación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/clasificación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/classification\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/classificação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q17\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/diagnosis\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/diagnóstico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/diagnóstico\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/diagnostic\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/diagnóstico\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q20\"}}, {\"label\": [{\"@value\": \"/drug effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos de los fármacos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos de los fármacos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets des médicaments et des substances chimiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos dos fármacos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q22\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/education\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/educación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/educación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/enseignement et éducation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/educação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q25\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/ethics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/ética\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/ética\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/éthique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/ética\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q30\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/etiology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/etiología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/etiología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/étiologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/etiologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q35\"}}, {\"label\": [{\"@value\": \"/history\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/historia\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/historia\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/histoire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/história\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q36\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/injuries\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/lesiones\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/lesiones\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/traumatismes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/lesões\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q37\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/instrumentation\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/instrumentación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/instrumentación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/instrumentation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/instrumentação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q38\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/methods\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/métodos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/métodos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/méthodes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/métodos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q39\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/organization & administration\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/organización & administración\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/organización & administración\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/organisation et administration\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/organização & administração\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q40\"}}, {\"label\": [{\"@value\": \"/pathogenicity\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/patogenicidad\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/patogenicidad\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/pathogénicité\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/patogenicidade\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q42\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/pharmacology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/pharmacologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/farmacologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q45\"}}, {\"label\": [{\"@value\": \"/physiology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/fisiología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/fisiología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/physiologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/fisiologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q50\"}}, {\"label\": [{\"@value\": \"/policies\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/políticas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/políticas\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/politiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/políticas\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q51\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/psychology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/psicología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/psicología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/psychologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/psicologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q52\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/radiation effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos de la radiación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos de la radiación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets des radiations\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos da radiação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q53\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/statistics & numerical data\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/estadística & datos numéricos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/estadística & datos numéricos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/statistiques et données numériques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/estatística & dados numéricos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q55\"}}, {\"label\": [{\"@value\": \"/therapeutic use\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/usage thérapeutique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/uso terapêutico\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q60\"}}, {\"label\": [{\"@value\": \"/therapy\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/terapia\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/terapia\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/thérapie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/terapia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q65\"}}, {\"label\": [{\"@value\": \"/veterinary\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/veterinaria\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/veterinaria\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/médecine vétérinaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/veterinária\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Q70\", \"leaf\": \"true\"}}]"
+  }
+ },
+ {
+  "model": "thesaurus.firstlevel",
+  "pk": 41,
+  "fields": {
+   "created_time": "2025-12-10T20:38:22.719Z",
+   "updated_time": "2025-12-10T20:38:22.719Z",
+   "created_by": null,
+   "updated_by": null,
+   "treeNumber": "Y",
+   "type": "Qualifier",
+   "thesaurus": 1,
+   "decs_code": "",
+   "self_term": "{\"label\": [{\"@value\": \"Other Qualifiers\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"Otros Calificadores\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"Outros qualificadores\", \"@language\": \"pt-br\", \"status\": 1}, {\"@value\": \"Autres qualifications\", \"@language\": \"fr\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y\"}}",
+   "descendant": "[{\"label\": [{\"@value\": \"/analysis\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/análisis\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/análisis\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/analyse\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/análise\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y01\"}}, {\"label\": [{\"@value\": \"/anatomy & histology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/anatomía & histología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/anatomía & histología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/anatomie et histologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/anatomia & histologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y02\"}}, {\"label\": [{\"@value\": \"/chemistry\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/química\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/química\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/composition chimique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/química\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y03\"}}, {\"label\": [{\"@value\": \"/diagnosis\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/diagnóstico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/diagnóstico\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/diagnostic\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/diagnóstico\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y04\"}}, {\"label\": [{\"@value\": \"/etiology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/etiología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/etiología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/étiologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/etiologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y05\"}}, {\"label\": [{\"@value\": \"/organization & administration\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/organización & administración\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/organización & administración\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/organisation et administration\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/organização & administração\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y06\"}}, {\"label\": [{\"@value\": \"/pharmacology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/farmacología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/pharmacologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/farmacologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y07\"}}, {\"label\": [{\"@value\": \"/physiology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/fisiología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/fisiología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/physiologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/fisiologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y08\"}}, {\"label\": [{\"@value\": \"/statistics & numerical data\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/estadística & datos numéricos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/estadística & datos numéricos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/statistiques et données numériques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/estatística & dados numéricos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y09\"}}, {\"label\": [{\"@value\": \"/therapeutic use\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/uso terapéutico\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/usage thérapeutique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/uso terapêutico\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y10\"}}, {\"label\": [{\"@value\": \"/therapy\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/terapia\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/terapia\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/thérapie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/terapia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y11\"}}, {\"label\": [{\"@value\": \"/classification\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/clasificación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/clasificación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/classification\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/classificação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y19\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/drug effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos de los fármacos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos de los fármacos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets des médicaments et des substances chimiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos dos fármacos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y21\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/education\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/educación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/educación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/enseignement et éducation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/educação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y23\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/ethics\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/ética\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/ética\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/éthique\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/ética\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y25\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/history\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/historia\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/historia\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/histoire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/história\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y27\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/injuries\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/lesiones\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/lesiones\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/traumatismes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/lesões\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y29\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/instrumentation\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/instrumentación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/instrumentación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/instrumentation\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/instrumentação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y31\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/methods\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/métodos\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/métodos\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/méthodes\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/métodos\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y33\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/pathogenicity\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/patogenicidad\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/patogenicidad\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/pathogénicité\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/patogenicidade\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y35\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/policies\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/políticas\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/políticas\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/politiques\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/políticas\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y36\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/psychology\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/psicología\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/psicología\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/psychologie\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/psicologia\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y37\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/radiation effects\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/efectos de la radiación\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/efectos de la radiación\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/effets des radiations\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/efeitos da radiação\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y39\", \"leaf\": \"true\"}}, {\"label\": [{\"@value\": \"/veterinary\", \"@language\": \"en\", \"status\": 1}, {\"@value\": \"/veterinaria\", \"@language\": \"es\", \"status\": 1}, {\"@value\": \"/veterinaria\", \"@language\": \"es-es\", \"status\": 1}, {\"@value\": \"/médecine vétérinaire\", \"@language\": \"fr\", \"status\": 1}, {\"@value\": \"/veterinária\", \"@language\": \"pt-br\", \"status\": 1}], \"attr\": {\"tree_id\": \"Y41\", \"leaf\": \"true\"}}]"
+  }
+ }
+]

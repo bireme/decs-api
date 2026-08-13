@@ -60,7 +60,7 @@ def __init__(self, related_instance_to_ignore=None, **kwargs):
 	object.__setattr__(self, '_prepared_fields', self.init_prepare())
 ```
 
-**`app/thesaurus/tests.py`** — added `PreparedFieldsTest`, which asserts that every registered document's `_prepared_fields` covers its full mapping. It needs no database or live cluster, so it runs under `make test`.
+**`app/thesaurus/tests.py`** — added `PreparedFieldsTest`, which asserts that every registered document's `_prepared_fields` covers its full mapping. It needs no database or live cluster, so it runs under `make dev_test`.
 
 ## Why this holds across future versions
 

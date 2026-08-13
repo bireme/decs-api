@@ -1,3 +1,5 @@
+import functools
+
 from django.db.models.functions import Length, Substr
 from django.conf import settings
 
@@ -16,8 +18,16 @@ from api.esearch_functions import *
 # Serializador para que formato xml sea igual al del WS DeCS actual
 from api.ws_decs_serializer import WsDecsSerializer
 
-valid_lang = TermListDesc.objects.distinct().values("language_code")
-DECS_LANGUAGES = [list(dict_lang.values())[0] for dict_lang in valid_lang]
+@functools.cache
+def get_decs_languages():
+	"""Language codes present in the thesaurus, read once and cached.
+
+	Querying at import time made language handling depend on when the URLconf
+	was first loaded, and made the module impossible to import before migrate.
+	Call cache_clear() after changing TermListDesc (tests, data reloads).
+	"""
+	valid_lang = TermListDesc.objects.distinct().values("language_code")
+	return [list(dict_lang.values())[0] for dict_lang in valid_lang]
 
 # limitar traceback en las respuestas con error
 # import sys
@@ -427,7 +437,7 @@ class TermResource(Resource):
 
 def get_valid_lang(lang):
 	# valid_lang = [k[0:2] for k, v in settings.LANGUAGES]
-	if lang[0:2] not in DECS_LANGUAGES:
+	if lang[0:2] not in get_decs_languages():
 		lang = 'pt'
 		lang_code = 'pt-br'
 	else:
