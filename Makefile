@@ -130,6 +130,13 @@ prod_rm:
 prod_sh:
 	@docker compose exec decs_api_app sh
 
+## force a fresh pull of the nginx image and recreate the webserver container.
+## the image tag (nginx:1.30-alpine) is a moving tag, so `pull` is what actually
+## brings in the upstream patch releases
+prod_upgrade_webserver:
+	@docker compose pull decs_api_webserver
+	@docker compose up -d --force-recreate decs_api_webserver
+
 prod_exec_collectstatic:
 	@docker compose exec -T decs_api_app python manage.py collectstatic --noinput
 
