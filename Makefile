@@ -3,22 +3,13 @@ APP_VERSION=$(shell git describe --tags --long --always | sed 's/-g[a-z0-9]\{7\}
 TAG_LATEST=$(IMAGE_NAME):latest
 
 COMPOSE_FILE_DEV=docker-compose-dev.yml
+PACKAGE ?=
 
 ## variable used in docker-compose for tag the build image
 export IMAGE_TAG=$(IMAGE_NAME):$(APP_VERSION)
 
 tag:
 	@echo "IMAGE TAG:" $(IMAGE_TAG)
-
-## gestion de dependencias (uv)
-## re-lock after editing pyproject.toml — the Docker build uses --frozen and
-## will fail if uv.lock is out of date
-deps_lock:
-	@uv lock
-
-## raise pinned versions within the ranges declared in pyproject.toml
-deps_upgrade:
-	@uv lock --upgrade
 
 ## docker-compose desenvolvimento
 dev_build:
@@ -63,6 +54,9 @@ dev_populate_aux_tables:
 dev_search_index_build:
 	@docker compose exec decs_api_app python manage.py search_index --rebuild -f --models thesaurus
 
+## raise pinned versions within the ranges declared in pyproject.toml
+dev_upgrade_package:
+	@uv lock $(if $(PACKAGE),--upgrade-package $(PACKAGE),--upgrade)
 
 ## tests
 ## `run --rm` instead of `exec`: the suite needs no running stack and no
