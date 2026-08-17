@@ -77,15 +77,19 @@ dev_test:
 ## same container (DECS_TEST_URL points elsewhere if you already have one running)
 dev_test_live:
 	@docker compose -f $(COMPOSE_FILE_DEV) run --rm --no-deps -T \
-		-e DECS_TEST_ES=1 -e DECS_TEST_PARITY=$(DECS_TEST_PARITY) -e DJANGO_ALLOWED_HOSTS=localhost \
+		-e DECS_TEST_ES=1 -e DJANGO_ALLOWED_HOSTS=localhost \
 		-v $(CURDIR)/scripts:/scripts decs_api_app \
 		sh -c 'python manage.py runserver 0.0.0.0:8000 --noreload >/tmp/server.log 2>&1 & \
 		       python /scripts/wait_for_api.py && \
 		       python manage.py test api.tests.test_live --settings=decs_api.settings_test'
 
-## layer 3 plus a structural diff of every response against production
+## parity: diff two deployments, XML and JSON, with no test runner involved.
+## Not part of the suite — pass arguments through PARITY_ARGS, e.g.
+##   make dev_test_parity PARITY_ARGS="--base-a https://decs-api.teste.bvsalud.org --relaxed"
 dev_test_parity:
-	@$(MAKE) dev_test_live DECS_TEST_PARITY=1
+	@docker compose -f $(COMPOSE_FILE_DEV) run --rm --no-deps -T \
+		-v $(CURDIR)/scripts:/scripts decs_api_app \
+		python /scripts/parity_check.py $(PARITY_ARGS)
 
 ## regenerate app/api/tests/fixtures/decs_sample.json from the dev database
 dev_dump_test_fixtures:

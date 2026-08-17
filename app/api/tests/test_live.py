@@ -10,8 +10,8 @@ The expectations are pinned to real DeCS records that have been stable for
 years. If one of them is edited in the thesaurus, the pinned value here is what
 needs updating — the assertion failure names the record.
 
-With DECS_TEST_PARITY=1 each response is additionally compared, structurally,
-against the same query on production, and the first differing path is reported.
+Comparing a deployment against another one is not this suite's job: that lives
+in scripts/parity_check.py, which needs no test runner and no database.
 """
 
 import os
@@ -22,18 +22,13 @@ import urllib.request
 from lxml import etree
 
 LIVE = os.environ.get('DECS_TEST_ES') == '1'
-PARITY = os.environ.get('DECS_TEST_PARITY') == '1'
 
 BASE_URL = os.environ.get('DECS_TEST_URL', 'http://localhost:8000')
-PRODUCTION_URL = os.environ.get('DECS_TEST_PARITY_URL', 'https://decs-api.bvsalud.org')
 
 TIMEOUT = int(os.environ.get('DECS_TEST_TIMEOUT', 60))
 
 # the production proxy rejects the default `Python-urllib/x.y` agent
 USER_AGENT = os.environ.get('DECS_TEST_USER_AGENT', 'decs-api-tests/1.0')
-
-# attributes that legitimately differ between two runs of the same query
-VOLATILE_ATTRIBUTES = {'date'}
 
 # pinned records — decs_code (mfn) and the values the API renders for them
 MUSCLES = {'mfn': '9324', 'tree_id': 'A02.633', 'pt': 'Músculos', 'en': 'Muscles', 'nlm': 'D009132'}
@@ -47,59 +42,11 @@ def fetch(base_url, path, params):
 		return response.read()
 
 
-def normalize(text):
-	return ' '.join((text or '').split())
-
-
-def first_difference(left, right, path='/'):
-	"""Return the path of the first structural difference, or None if equal."""
-	here = path + left.tag
-
-	if left.tag != right.tag:
-		return '%s (tag: %s != %s)' % (path, left.tag, right.tag)
-
-	for name, value in left.attrib.items():
-		if name in VOLATILE_ATTRIBUTES:
-			continue
-		if right.get(name) != value:
-			return '%s/@%s (%r != %r)' % (here, name, value, right.get(name))
-
-	missing = set(right.attrib) - set(left.attrib) - VOLATILE_ATTRIBUTES
-	if missing:
-		return '%s/@%s (missing on the left)' % (here, sorted(missing)[0])
-
-	if normalize(left.text) != normalize(right.text):
-		return '%s/text() (%r != %r)' % (here, normalize(left.text), normalize(right.text))
-
-	left_children, right_children = list(left), list(right)
-	if len(left_children) != len(right_children):
-		return '%s (%d children != %d)' % (here, len(left_children), len(right_children))
-
-	for index, (left_child, right_child) in enumerate(zip(left_children, right_children)):
-		difference = first_difference(left_child, right_child, '%s[%d]/' % (here, index))
-		if difference:
-			return difference
-
-	return None
-
-
 @unittest.skipUnless(LIVE, "set DECS_TEST_ES=1 to run against a live stack")
 class LiveTestCase(unittest.TestCase):
 
 	def get(self, path, **params):
-		content = fetch(BASE_URL, path, params)
-		root = etree.fromstring(content)
-
-		if PARITY:
-			self.assertMatchesProduction(root, path, params)
-
-		return root
-
-	def assertMatchesProduction(self, root, path, params):
-		production = etree.fromstring(fetch(PRODUCTION_URL, path, params))
-		difference = first_difference(root, production)
-
-		self.assertIsNone(difference, "differs from production at %s for %s %s" % (difference, path, params))
+		return etree.fromstring(fetch(BASE_URL, path, params))
 
 
 class LiveTermTest(LiveTestCase):
