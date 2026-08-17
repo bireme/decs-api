@@ -29,7 +29,7 @@ services:
   decs_api_webserver:
     container_name: decs-api-webserver
     restart: unless-stopped
-    image: nginx:1.31-alpine
+    image: nginx:1.30-alpine
     expose:
       - 80
     volumes:
