@@ -11,5 +11,6 @@ DATABASE_HOST=
 DATABASE_PORT=
 
 # ELASTIC SEARCH
+# host:port or a full URL; a bare host:port is assumed to be http://
 ELASTICSEARCH_HOST=
 ELASTICSEARCH_TIMEOUT=

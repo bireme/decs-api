@@ -1,0 +1,28 @@
+[project]
+name = "decs-api"
+version = "0.1.0"
+description = "DeCS/MeSH thesaurus API"
+requires-python = ">=3.14"
+
+dependencies = [
+    "Django~=5.2",
+    "mysqlclient~=2.2.8",
+    "gunicorn~=26.0.0",
+    "django-tastypie~=0.15",
+    "lxml~=6.1.1",
+    "defusedxml~=0.7.1",
+    "jsonfield~=3.2.0",
+    "django-elasticsearch-dsl~=9.0",
+    "elasticsearch~=9.5.0",
+    "pyparsing~=3.3.2",
+]
+
+[dependency-groups]
+dev = [
+    "django-debug-toolbar~=7.1.0",
+]
+
+[tool.uv]
+# This is an application, not a distributable package: there is no build backend
+# and uv must not try to build/install the project itself.
+package = false

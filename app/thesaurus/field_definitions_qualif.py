@@ -4,10 +4,8 @@
 QUALIFIERS
 '''
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-import colander
-import deform
 import json
 
 language_choices = (('pt', 'Português'), ('es', 'Espanhol'), ('en', 'Inglês'))
@@ -108,7 +106,7 @@ field_tag_map = {
                 # geog_decs
                 'descriptor_type_geog_decs': '106',
 
-                'annotation_en': '110', 
+                'annotation_en': '110',
                 'online_note_en': '117',
                 'history_note_en': '119',
 

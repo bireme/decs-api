@@ -1,6 +1,6 @@
 from django_elasticsearch_dsl import Document, fields as fields_dsl
 from django_elasticsearch_dsl.registries import registry
-from elasticsearch_dsl import analyzer, normalizer
+from elasticsearch.dsl import analyzer, normalizer
 
 from thesaurus.models import TermListDesc, TermListQualif, PreviousIndexingListDesc, TreeNumbersListDesc, TreeNumbersListQualif
 
@@ -24,8 +24,26 @@ custom_sort_normalizer = normalizer(
     filter=["lowercase","asciifolding"]
 )
 
+class BaseDocument(Document):
+	"""Base for every document below.
+
+	elasticsearch-dsl 9.4 changed AttrDict.__setattr__ to store an attribute in the
+	internal _d_ dict unless the class attribute is a property with an fset. That
+	swallows the ``self._prepared_fields = self.init_prepare()`` assignment made by
+	django_elasticsearch_dsl's DocType.__init__: the write lands in _d_ while reads
+	resolve to the class-level default of [], so prepare() returns {} and the rebuild
+	indexes empty documents without raising. Assigning through object.__setattr__
+	puts the value in the instance __dict__, where attribute lookup takes it ahead of
+	the class attribute on any elasticsearch version.
+	"""
+
+	def __init__(self, related_instance_to_ignore=None, **kwargs):
+		super().__init__(related_instance_to_ignore=related_instance_to_ignore, **kwargs)
+		object.__setattr__(self, '_prepared_fields', self.init_prepare())
+
+
 @registry.register_document
-class DescriptorTermDocument(Document):
+class DescriptorTermDocument(BaseDocument):
 	term_string = fields_dsl.TextField(
 		analyzer=standard_asciifolding,
 		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding),
@@ -70,7 +88,7 @@ class DescriptorTermDocument(Document):
 		# queryset_pagination = 5000
 
 @registry.register_document
-class QualifierTermDocument(Document):
+class QualifierTermDocument(BaseDocument):
 	term_string = fields_dsl.TextField(
 		analyzer=standard_asciifolding,
 		fields={'full_field': fields_dsl.TextField(analyzer=keyword_asciifolding),
@@ -112,7 +130,7 @@ class QualifierTermDocument(Document):
 
 
 @registry.register_document
-class PreviousTermDocument(Document):
+class PreviousTermDocument(BaseDocument):
 
 	term_string = fields_dsl.TextField(
 		attr="previous_indexing",
@@ -158,7 +176,7 @@ class PreviousTermDocument(Document):
 
 
 @registry.register_document
-class DescriptorTreeNumberDocument(Document):
+class DescriptorTreeNumberDocument(BaseDocument):
 
 	# Filter by exact field value: "A01.111"
 	tree_number = fields_dsl.KeywordField()
@@ -189,7 +207,7 @@ class DescriptorTreeNumberDocument(Document):
 
 
 @registry.register_document
-class QaulifierTreeNumberDocument(Document):
+class QaulifierTreeNumberDocument(BaseDocument):
 
 	# Filter by exact field value: "A01.111"
 	tree_number = fields_dsl.KeywordField()

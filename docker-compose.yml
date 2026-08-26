@@ -29,7 +29,7 @@ services:
   decs_api_webserver:
     container_name: decs-api-webserver
     restart: unless-stopped
-    image: nginx:1.31-alpine
+    image: nginx:1.30-alpine
     expose:
       - 80
     volumes:
@@ -52,7 +52,7 @@ services:
 
   decs_api_elasticsearch:
     container_name: decs-api-elasticsearch
-    image: elasticsearch:8.19.16
+    image: elasticsearch:9.4.4
     volumes:
       - esdata:/usr/share/elasticsearch/data
     ports:
